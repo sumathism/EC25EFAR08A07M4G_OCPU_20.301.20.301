@@ -1,0 +1,13 @@
+Package: quectel-rtl8189es
+Version: git-r8_perf
+Description: quectel-rtl8189es version git-r8_perf
+ Quectel rtl8189es
+Section: base
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: ISC
+Architecture: mdm9607
+OE: quectel-rtl8189es
+Depends: kernel-module-rtl8189es
+Provides: kernel-module-wlan
+Source: file://quectel/rtl8189/

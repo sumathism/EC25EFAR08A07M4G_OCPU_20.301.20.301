@@ -1,0 +1,14 @@
+Package: ql-firewall-dbg
+Version: git-r21
+Description: ql-firewall version git-r21 - Debugging files
+ Quectel Manager Modules  This package contains ELF symbols and related
+ sources for debugging purposes.
+Section: devel
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: Quectel-Wireless-Solutions-Co-Ltd.-Proprietary 
+Architecture: mdm9607
+OE: ql-firewall
+Homepage: https://www.quectel.com/
+Recommends: ql-syslog-dbg, libc6-dbg
+Source: file://quectel/ql-firewall/

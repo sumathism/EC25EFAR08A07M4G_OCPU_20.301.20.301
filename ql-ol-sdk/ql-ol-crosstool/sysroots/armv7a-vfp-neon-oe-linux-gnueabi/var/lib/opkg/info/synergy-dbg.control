@@ -1,0 +1,14 @@
+Package: synergy-dbg
+Version: 1.0-r0
+Description: synergy version 1.0-r0 - Debugging files
+ QTI Synergy BT Stack  This package contains ELF symbols and related
+ sources for debugging purposes.
+Section: devel
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: Qualcomm-Technologies-Inc.-Proprietary
+Architecture: mdm9607
+OE: synergy
+Homepage: http://support.cdmatech.com
+Recommends: libc6-dbg, libgcc-s-dbg, libasound-dbg, mcm-core-dbg
+Source: file://synergy-bt-proprietary

@@ -1,0 +1,14 @@
+Package: atfwd-daemon-staticdev
+Version: git-r3
+Description: atfwd-daemon version git-r3 - Development files (Static Libraries)
+ Daemon to handle AT commands  This package contains static libraries for
+ software development.
+Section: devel
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: Qualcomm-Technologies-Inc.-Proprietary
+Architecture: mdm9607
+OE: atfwd-daemon
+Homepage: http://support.cdmatech.com
+Depends: atfwd-daemon-dev (= git-r3)
+Source: file://mdm-ss-mgr/atfwd-daemon/

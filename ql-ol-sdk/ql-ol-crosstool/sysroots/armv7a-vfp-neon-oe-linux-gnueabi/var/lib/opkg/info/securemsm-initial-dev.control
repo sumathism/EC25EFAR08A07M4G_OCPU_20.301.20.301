@@ -1,0 +1,15 @@
+Package: securemsm-initial-dev
+Version: git-r22
+Description: securemsm-initial version git-r22 - Development files
+ Provide QSEEComAPI Headers required from securemsm  This package contains
+ symbolic links, header files, and related items necessary for software
+ development.
+Section: devel
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: Qualcomm-Technologies-Inc.-Proprietary
+Architecture: mdm9607
+OE: securemsm-initial
+Homepage: http://support.cdmatech.com
+Depends: securemsm-initial (= git-r22)
+Source: file://security/securemsm

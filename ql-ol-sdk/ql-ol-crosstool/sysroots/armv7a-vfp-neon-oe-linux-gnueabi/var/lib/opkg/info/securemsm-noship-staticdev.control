@@ -1,0 +1,15 @@
+Package: securemsm-noship-staticdev
+Version: 1.0-1
+Description: securemsm-noship version 1.0-1 - Development files (Static Libraries)
+ securemsmnoship with QseecomAPI user space library to interact with
+ qseecom driver  This package contains static libraries for software
+ development.
+Section: devel
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: Qualcomm-Technologies-Inc.-Proprietary
+Architecture: mdm9607
+OE: securemsm-noship
+Homepage: http://support.cdmatech.com
+Depends: securemsm-noship-dev (= 1.0-1)
+Source: file://security/securemsm-noship/

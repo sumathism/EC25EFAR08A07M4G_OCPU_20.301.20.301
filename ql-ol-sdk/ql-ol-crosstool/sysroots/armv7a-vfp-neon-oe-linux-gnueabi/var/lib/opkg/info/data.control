@@ -1,0 +1,13 @@
+Package: data
+Version: git-r24
+Description: data version git-r24
+ Qualcomm Technologies Data Modules (Excluding ConfigDB and DSUtils)
+Section: base
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: Qualcomm-Technologies-Inc.-Proprietary
+Architecture: mdm9607
+OE: data
+Homepage: http://support.cdmatech.com
+Depends: libtime-genoff1 (>= git), libgcc1 (>= 4.9.3), data-oss (>= git), libqmi-client-helper1 (>= git), libstdc++6 (>= 4.9.3), libconfigdb0 (>= git), libdsutils1 (>= git), libxml0 (>= git), ql-syslog (>= git), qmi (>= git), qmi-framework (>= git), libc6 (>= 2.22), libglib-2.0-0 (>= 2.44.1), diag (>= git), libpugixml1 (>= 1.4)
+Source: file://data/ file://data-init

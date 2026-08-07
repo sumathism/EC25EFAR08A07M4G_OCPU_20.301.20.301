@@ -1,0 +1,12 @@
+Package: securemsm-initial
+Version: git-r22
+Description: securemsm-initial version git-r22
+ Provide QSEEComAPI Headers required from securemsm
+Section: base
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: Qualcomm-Technologies-Inc.-Proprietary
+Architecture: mdm9607
+OE: securemsm-initial
+Homepage: http://support.cdmatech.com
+Source: file://security/securemsm

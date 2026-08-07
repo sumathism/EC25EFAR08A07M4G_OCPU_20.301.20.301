@@ -1,0 +1,15 @@
+Package: thermal-engine-dev
+Version: git-r10
+Description: thermal-engine version git-r10 - Development files
+ Thermal Engine  This package contains symbolic links, header files, and
+ related items necessary for software development.
+Section: devel
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: Qualcomm-Technologies-Inc.-Proprietary
+Architecture: mdm9607
+OE: thermal-engine
+Homepage: http://support.cdmatech.com
+Depends: thermal-engine (= git-r10)
+Recommends: libc6-dev, initscripts-dev, libglib-2.0-dev, update-rc.d-dev, qmi-framework-dev
+Source: file://thermal-engine

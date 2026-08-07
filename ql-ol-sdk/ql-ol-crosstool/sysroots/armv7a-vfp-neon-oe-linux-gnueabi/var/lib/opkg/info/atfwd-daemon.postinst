@@ -1,0 +1,5 @@
+install -m 0755 /P4code/depot3/Qualcomm/MDM9x07/MCU_R08/apps_proc/mdm-ss-mgr/atfwd-daemon/lib/libql_data_wwan.so -D $D/usr/lib/libql_data_wwan.so.1
+    install -m 0755 /P4code/depot3/Qualcomm/MDM9x07/MCU_R08/apps_proc/mdm-ss-mgr/atfwd-daemon/lib/libuspsdk.so       -D $D/usr/lib/libuspsdk.so
+    install -m 0755 /P4code/depot3/Qualcomm/MDM9x07/MCU_R08/apps_proc/mdm-ss-mgr/atfwd-daemon/lib/libql_obd_iot.so   -D $D/usr/lib/libql_obd_iot.so
+    ln -s libssl.so.1.0.0  $D/usr/lib/libssl.so
+    ln -s /lib/libcrypto.so.1.0.0  $D/usr/lib/libcrypto.so

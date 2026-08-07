@@ -1,0 +1,14 @@
+Package: ql-fota-staticdev
+Version: git-r21
+Description: ql-fota version git-r21 - Development files (Static Libraries)
+ Quectel FOTA Configuration  This package contains static libraries for
+ software development.
+Section: devel
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: Quectel-Wireless-Solutions-Co-Ltd.-Proprietary 
+Architecture: mdm9607
+OE: ql-fota
+Homepage: https://www.quectel.com/
+Depends: ql-fota-dev (= git-r21)
+Source: file://quectel/fota/

@@ -1,0 +1,12 @@
+/usr/lib/libql_lib_audio.so
+/usr/lib/pkgconfig/ql-audio-api.pc
+/usr/include/ql_lib_audio.h
+/usr/include/audio_log.h
+/usr/include/ql_mp3.h
+/usr/include/ql_wav.h
+/usr/include/ql_mixer.h
+/usr/include/ql_amr.h
+/usr/include/quectel-audio-lib.h
+/usr/include/amrFileCodec.h
+/usr/lib/libql_lib_audio.la
+/usr/lib/libmad.so

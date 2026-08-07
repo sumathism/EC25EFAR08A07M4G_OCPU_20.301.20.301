@@ -1,0 +1,15 @@
+Package: surround-sound-3mic-dev
+Version: git-r0
+Description: surround-sound-3mic version git-r0 - Development files
+ surround_sound_3mic Library  This package contains symbolic links, header
+ files, and related items necessary for software development.
+Section: devel
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: Qualcomm-Technologies-Inc.-Proprietary
+Architecture: mdm9607
+OE: surround-sound-3mic
+Homepage: http://support.cdmatech.com
+Depends: surround-sound-3mic (= git-r0)
+Recommends: libc6-dev
+Source: file://audio/mm-audio-noship/surround_sound_3mic/

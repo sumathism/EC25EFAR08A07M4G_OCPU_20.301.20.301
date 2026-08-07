@@ -1,0 +1,4 @@
+#!/bin/sh
+if [ -z "$D" ]; then
+	/etc/init.d/time_serviced stop
+fi

@@ -1,0 +1,16 @@
+Package: libloc-mcm-test-shim-dev
+Version: git-r4
+Description: loc-mcm-test-shim version git-r4 - Development files
+ MCM Location Test Library  This package contains symbolic links, header
+ files, and related items necessary for software development.
+Section: devel
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: Qualcomm-Technologies-Inc.-Proprietary
+Architecture: armv7a-vfp-neon
+OE: loc-mcm-test-shim
+Homepage: http://support.cdmatech.com
+Depends: libloc-mcm-test-shim1 (= git-r4)
+Recommends: mcm-core-dev, libgps-utils-so-dev, libcutils-dev, libdsutils-dev, libloc-mcm-type-conv-dev, mcm-dev, libglib-2.0-dev, garden-test-interfaces-dev, libstdc++-dev, libloc-stub-dev, libc6-dev, libtime-genoff-dev, qmi-dev, libloc-pla-dev, ql-syslog-dev, libgcc-s-dev, diag-dev, libxml-dev, libconfigdb-dev, liblog-dev, qmi-framework-dev
+Provides: loc-mcm-test-shim-dev
+Source: file://mcm-gps/loc-mcm-test-shim/

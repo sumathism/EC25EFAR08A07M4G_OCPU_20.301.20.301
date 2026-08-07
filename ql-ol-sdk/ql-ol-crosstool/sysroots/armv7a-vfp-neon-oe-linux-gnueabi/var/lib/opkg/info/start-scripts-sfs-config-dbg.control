@@ -1,0 +1,13 @@
+Package: start-scripts-sfs-config-dbg
+Version: 1.0-r2
+Description: start-scripts-sfs-config version 1.0-r2 - Debugging files
+ Start up script for secure file system configuration  This package
+ contains ELF symbols and related sources for debugging purposes.
+Section: devel
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: Qualcomm-Technologies-Inc.-Proprietary
+Architecture: armv7a-vfp-neon
+OE: start-scripts-sfs-config
+Homepage: http://support.cdmatech.com
+Source: file://sfs_config file://sfsconfig.service

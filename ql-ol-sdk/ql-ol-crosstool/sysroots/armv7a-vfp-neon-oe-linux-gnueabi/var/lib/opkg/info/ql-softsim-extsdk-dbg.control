@@ -1,0 +1,14 @@
+Package: ql-softsim-extsdk-dbg
+Version: git-r01
+Description: ql-softsim-extsdk version git-r01 - Debugging files
+ Quectel Softsim SDK  This package contains ELF symbols and related
+ sources for debugging purposes.
+Section: devel
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: Quectel-Wireless-Solutions-Co-Ltd.-Proprietary 
+Architecture: mdm9607
+OE: ql-softsim-extsdk
+Homepage: https://www.quectel.com/
+Recommends: libdsutils-dbg, diag-dbg, libconfigdb-dbg, ql-manager-dbg, adns-dbg, libtime-genoff-dbg, libglib-2.0-dbg, ql-common-tools-dbg, ql-syslog-dbg, libxml-dbg, libc6-dbg, qmi-framework-dbg, qmi-dbg
+Source: file://quectel/softsim-extsdk/

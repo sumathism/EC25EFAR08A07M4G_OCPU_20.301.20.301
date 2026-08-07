@@ -1,0 +1,14 @@
+Package: quectel-rtl8189es-dev
+Version: git-r8_perf
+Description: quectel-rtl8189es version git-r8_perf - Development files
+ Quectel rtl8189es   This package contains symbolic links, header files,
+ and related items necessary for software development.
+Section: devel
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: ISC
+Architecture: mdm9607
+OE: quectel-rtl8189es
+Depends: quectel-rtl8189es (= git-r8_perf)
+Recommends: rtsp-alg-dev, kernel-3.18.44-dev, kernel-module-rtl8189es-dev
+Source: file://quectel/rtl8189/

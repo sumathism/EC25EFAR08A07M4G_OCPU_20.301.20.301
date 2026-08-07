@@ -1,0 +1,6 @@
+/usr/bin/.debug/irsc_util
+/usr/lib/.debug/libqmi_sap.so.1.0.0
+/usr/lib/.debug/libqmi_common_so.so.1.0.0
+/usr/lib/.debug/libqmi_encdec.so.1.0.0
+/usr/lib/.debug/libqmi_cci.so.1.0.0
+/usr/lib/.debug/libqmi_csi.so.1.0.0

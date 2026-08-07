@@ -1,0 +1,15 @@
+Package: atfwd-daemon-dev
+Version: git-r3
+Description: atfwd-daemon version git-r3 - Development files
+ Daemon to handle AT commands  This package contains symbolic links,
+ header files, and related items necessary for software development.
+Section: devel
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: Qualcomm-Technologies-Inc.-Proprietary
+Architecture: mdm9607
+OE: atfwd-daemon
+Homepage: http://support.cdmatech.com
+Depends: atfwd-daemon (= git-r3)
+Recommends: quectel-audio-lib-dev, wolfssl-dev, libcutils-dev, libdsutils-dev, libcurl-dev, libql-misc-dev, libglib-2.0-dev, curl-dev, libc6-dev, data-dev, qmi-dev, ql-fota-dev, alsa-intf-dev, quectel-tts-sdk-dev, ql-common-tools-dev, ql-manager-dev, qmi-framework-dev
+Source: file://mdm-ss-mgr/atfwd-daemon/

@@ -1,0 +1,10 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+
+Name: xt-adapter
+Description: QTI GPS XT Adapter
+Version: @VERSION
+Libs: -L${libdir} -lxtadapter
+Cflags: -I${includedir}/xt-adapter

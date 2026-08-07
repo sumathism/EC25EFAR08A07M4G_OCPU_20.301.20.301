@@ -1,0 +1,16 @@
+Package: libql-zip-verify-dev
+Version: git-r0
+Description: ql-zip-verify version git-r0 - Development files
+ quectel secure fota  This package contains symbolic links, header files,
+ and related items necessary for software development.
+Section: devel
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: Quectel-Wireless-Solutions-Co-Ltd.-Proprietary 
+Architecture: mdm9607
+OE: ql-zip-verify
+Homepage: https://www.quectel.com/
+Depends: libql-zip-verify2 (= git-r0)
+Recommends: libglib-2.0-dev, libssl-dev, openssl-dev, libcrypto-dev, libc6-dev, common-dev
+Provides: ql-zip-verify-dev
+Source: file://quectel/ql-security/ql-zip_verify/

@@ -1,0 +1,15 @@
+Package: securemsm-dbg
+Version: git-r1
+Description: securemsm version git-r1 - Debugging files
+ Securemsm library with sampleclient used to test sampleapp with qseecom
+ driver through QSEEComApi library  This package contains ELF symbols and
+ related sources for debugging purposes.
+Section: devel
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: Qualcomm-Technologies-Inc.-Proprietary
+Architecture: mdm9607
+OE: securemsm
+Homepage: http://support.cdmatech.com
+Recommends: libc6-dbg, securemsm-noship-dbg
+Source: file://security/securemsm/

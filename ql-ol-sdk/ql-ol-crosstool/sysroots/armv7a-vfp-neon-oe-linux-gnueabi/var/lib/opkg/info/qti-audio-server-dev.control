@@ -1,0 +1,15 @@
+Package: qti-audio-server-dev
+Version: git-r0
+Description: qti-audio-server version git-r0 - Development files
+ qti-audio-server Library  This package contains symbolic links, header
+ files, and related items necessary for software development.
+Section: devel
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: Qualcomm-Technologies-Inc.-Proprietary
+Architecture: mdm9607
+OE: qti-audio-server
+Homepage: http://support.cdmatech.com
+Depends: qti-audio-server (= git-r0)
+Recommends: libhardware-dev, native-frameworks-dev, libgcc-s-dev, liblog-dev, libstdc++-dev, libc6-dev, tinyalsa-dev, system-core-dev, libcutils-dev, qahw-dev
+Source: file://audio/mm-audio/qti-audio-server/ file://qti_audio_server_daemon.sh file://qti_audio_server_daemon.service

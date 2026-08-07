@@ -1,0 +1,14 @@
+Package: libql-misc-dbg
+Version: git-r1
+Description: ql-misc version git-r1 - Debugging files
+ Quectel misc  This package contains ELF symbols and related sources for
+ debugging purposes.
+Section: devel
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: CLOSED
+Architecture: mdm9607
+OE: ql-misc
+Recommends: libc6-dbg, libgcc-s-dbg
+Provides: ql-misc-dbg
+Source: file://quectel/misc/

@@ -1,0 +1,18 @@
+Package: wolfssl-dev
+Version: 3.4.0-r0
+Description: wolfSSL Lightweight, Embedded SSL Library - Development files
+ wolfSSL, formerly CyaSSL, is a lightweight SSL library written in C and
+ optimized for embedded and RTOS environments. It can be                Up
+ to 20 times smaller than OpenSSL while still supporting                a
+ full TLS 1.2 client and server.  This package contains symbolic links,
+ header files, and related items necessary for software development.
+Section: devel
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: GPLv2
+Architecture: armv7a-vfp-neon
+OE: wolfssl
+Homepage: http://www.wolfssl.com/yaSSL/Products-wolfssl.html
+Depends: wolfssl (= 3.4.0-r0)
+Recommends: libc6-dev
+Source: http://www.wolfssl.com/wolfssl-3.4.0.zip

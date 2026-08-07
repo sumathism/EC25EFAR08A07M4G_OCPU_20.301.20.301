@@ -1,0 +1,16 @@
+Package: bash-dev
+Version: 3.2.48-r11
+Description: bash version 3.2.48-r11 - Development files
+ An sh-compatible command language interpreter.  This package contains
+ symbolic links, header files, and related items necessary for software
+ development.
+Section: devel
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: GPLv2+
+Architecture: armv7a-vfp-neon
+OE: bash
+Homepage: http://cnswww.cns.cwru.edu/~chet/bash/bashtop.html
+Depends: bash (= 3.2.48-r11)
+Recommends: libc6-dev, update-alternatives-opkg-dev, ncurses-libtinfo-dev, ncurses-dev
+Source: http://ftp.gnu.org/gnu/bash/bash-3.2.48.tar.gz;name=tarball http://ftp.gnu.org/gnu/bash/bash-3.2-patches/bash32-049;apply=yes;striplevel=0;name=patch001 http://ftp.gnu.org/gnu/bash/bash-3.2-patches/bash32-050;apply=yes;striplevel=0;name=patch002 http://ftp.gnu.org/gnu/bash/bash-3.2-patches/bash32-051;apply=yes;striplevel=0;name=patch003 file://mkbuiltins_have_stringize.patch file://build-tests.patch file://test-output.patch file://cve-2014-6271.patch;striplevel=0 file://cve-2014-7169.patch file://Fix-for-bash-exported-function-namespace-change.patch file://cve-2014-7186_cve-2014-7187.patch file://cve-2014-6277.patch file://cve-2014-6278.patch file://run-ptest file://dont-include-target-CFLAGS-in-host-LDFLAGS.patch file://string-format.patch

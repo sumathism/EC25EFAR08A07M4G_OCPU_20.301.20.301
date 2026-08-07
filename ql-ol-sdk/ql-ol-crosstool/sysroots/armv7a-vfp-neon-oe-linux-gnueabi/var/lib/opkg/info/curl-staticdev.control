@@ -1,0 +1,17 @@
+Package: curl-staticdev
+Version: 8.10.0-r0
+Description: Command line tool and library for client-side URL transfers - Development files (Static Libraries)
+ It uses URL syntax to transfer data to and from servers. curl is a widely
+ used because of its ability to be flexible and complete complex tasks.
+ For example, you can use curl for things like user authentication, HTTP
+ post, SSL connections, proxy support, FTP uploads, and more!  This
+ package contains static libraries for software development.
+Section: devel
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: curl
+Architecture: armv7a-vfp-neon
+OE: curl
+Homepage: https://curl.se/
+Depends: curl-dev (= 8.10.0-r0)
+Source: https://curl.se/download/curl-8.10.0.tar.xz

@@ -1,0 +1,15 @@
+Package: mtd-utils-dev
+Version: 1.0-r1
+Description: mtd-utils version 1.0-r1 - Development files
+ Tools for managing memory technology devices.  This package contains
+ symbolic links, header files, and related items necessary for software
+ development.
+Section: devel
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: GPLv2
+Architecture: armv7a-vfp-neon
+OE: mtd-utils
+Depends: mtd-utils (= 1.0-r1)
+Recommends: util-linux-dev, util-linux-libuuid-dev, libz-dev, liblzo2-dev, libc6-dev, e2fsprogs-dev
+Source: file://mtd-utils

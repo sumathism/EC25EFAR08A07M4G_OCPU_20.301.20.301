@@ -1,0 +1,15 @@
+Package: libxtadapter-dev
+Version: git-r1
+Description: xt-adapter version git-r1 - Development files
+ XT Adapter  This package contains symbolic links, header files, and
+ related items necessary for software development.
+Section: devel
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: Qualcomm-Technologies-Inc.-Proprietary
+Architecture: armv7a-vfp-neon
+OE: xt-adapter
+Depends: libxtadapter1 (= git-r1)
+Recommends: libloc-pla-dev, libgcc-s-dev, liblog-dev, libloc-stub-dev, libdataitems-dev, loc-hal-dev, libdsutils-dev, libqmi-client-helper-dev, libloc-base-util-dev, data-dev, qmi-dev, izat-core-dev, libssl-dev, libcrypto-dev, libstdc++-dev, libc6-dev, libtime-genoff-dev, libgps-utils-so-dev, libsqlite3-dev, system-core-dev, libxml-dev, loc-net-iface-dev, libcutils-dev, libglib-2.0-dev, data-oss-dev, qmi-framework-dev, libconfigdb-dev, diag-dev
+Provides: xt-adapter-dev
+Source: file://gps-noship/XT/XTAdapter/

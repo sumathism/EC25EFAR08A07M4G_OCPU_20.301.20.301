@@ -1,0 +1,14 @@
+Package: libexif12
+Version: 0.6.21-r0
+Description: Library to read the extended image information (EXIF) from JPEG pictures
+ Library to read the extended image information (EXIF) from JPEG pictures.
+Section: base
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: LGPLv2.1
+Architecture: armv7a-vfp-neon
+OE: libexif
+Homepage: http://sourceforge.net/projects/libexif
+Depends: libc6 (>= 2.22)
+Provides: libexif
+Source: http://downloads.sourceforge.net/project/libexif/libexif/0.6.21/libexif-0.6.21.tar.gz file://CVE-2016-6328.patch file://CVE-2017-7544.patch file://CVE-2018-20030.patch file://CVE-2020-0181.patch file://CVE-2020-0198.patch file://CVE-2020-13112.patch file://CVE-2020-13113.patch file://CVE-2020-13114.patch

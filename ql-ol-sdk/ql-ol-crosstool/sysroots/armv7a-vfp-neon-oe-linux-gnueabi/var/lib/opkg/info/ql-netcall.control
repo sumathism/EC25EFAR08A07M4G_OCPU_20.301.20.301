@@ -1,0 +1,13 @@
+Package: ql-netcall
+Version: bit-r1
+Description: ql-netcall version bit-r1
+ Quectel Net Call
+Section: base
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: Quectel-Wireless-Solutions-Co-Ltd.-Proprietary 
+Architecture: mdm9607
+OE: ql-netcall
+Homepage: https://www.quectel.com/
+Depends: data (>= git), libc6 (>= 2.22)
+Source: file://quectel/ql-netcall/

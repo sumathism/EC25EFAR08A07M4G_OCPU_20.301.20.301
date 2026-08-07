@@ -1,0 +1,16 @@
+Package: libtinfo5
+Version: 6.2-r0
+Description: ncurses tinfo library
+ ncurses tinfo library
+Section: libs
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: MIT
+Architecture: armv7a-vfp-neon
+OE: ncurses
+Homepage: http://www.gnu.org/software/ncurses/ncurses.html
+Depends: libc6 (>= 2.22)
+Suggests: ncurses-terminfo
+Recommends: ncurses-terminfo-base
+Provides: ncurses-libtinfo
+Source: git://salsa.debian.org/debian/ncurses.git;protocol=https;branch=master file://0001-tic-hang.patch file://0002-configure-reproducible.patch file://0003-gen-pkgconfig.in-Do-not-include-LDFLAGS-in-generated.patch file://CVE-2021-39537.patch file://CVE-2022-29458.patch

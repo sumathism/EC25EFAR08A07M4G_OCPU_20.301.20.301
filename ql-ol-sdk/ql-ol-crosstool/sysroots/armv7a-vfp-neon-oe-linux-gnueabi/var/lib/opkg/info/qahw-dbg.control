@@ -1,0 +1,13 @@
+Package: qahw-dbg
+Version: git-r0
+Description: qahw version git-r0 - Debugging files
+ qahw  This package contains ELF symbols and related sources for debugging
+ purposes.
+Section: devel
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: BSD
+Architecture: armv7a-vfp-neon
+OE: qahw
+Recommends: liblog-dbg, libstdc++-dbg, libcutils-dbg, libhardware-dbg, libc6-dbg
+Source: file://hardware/qcom/audio/qahw/

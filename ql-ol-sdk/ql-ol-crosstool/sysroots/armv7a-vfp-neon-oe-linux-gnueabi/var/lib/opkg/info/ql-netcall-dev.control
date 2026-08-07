@@ -1,0 +1,15 @@
+Package: ql-netcall-dev
+Version: bit-r1
+Description: ql-netcall version bit-r1 - Development files
+ Quectel Net Call  This package contains symbolic links, header files, and
+ related items necessary for software development.
+Section: devel
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: Quectel-Wireless-Solutions-Co-Ltd.-Proprietary 
+Architecture: mdm9607
+OE: ql-netcall
+Homepage: https://www.quectel.com/
+Depends: ql-netcall (= bit-r1)
+Recommends: libc6-dev, data-dev, libdsutils-dev
+Source: file://quectel/ql-netcall/

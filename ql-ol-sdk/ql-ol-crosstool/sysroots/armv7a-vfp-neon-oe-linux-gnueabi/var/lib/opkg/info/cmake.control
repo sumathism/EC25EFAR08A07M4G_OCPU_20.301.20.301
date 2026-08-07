@@ -1,0 +1,13 @@
+Package: cmake
+Version: 3.3.1-r0
+Description: Cross-platform, open-source make system
+ Cross-platform, open-source make system.
+Section: console/utils
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: BSD
+Architecture: armv7a-vfp-neon
+OE: cmake
+Homepage: http://www.cmake.org/
+Depends: libgcc1 (>= 4.9.3), libarchive13 (>= 3.1.2), libc6 (>= 2.22), libz1 (>= 1.2.8), libcurl4 (>= 8.10.0), libstdc++6 (>= 4.9.3), libexpat1 (>= 2.7.1)
+Source: http://www.cmake.org/files/v3.3/cmake-3.3.1.tar.gz file://support-oe-qt4-tools-names.patch file://qt4-fail-silent.patch

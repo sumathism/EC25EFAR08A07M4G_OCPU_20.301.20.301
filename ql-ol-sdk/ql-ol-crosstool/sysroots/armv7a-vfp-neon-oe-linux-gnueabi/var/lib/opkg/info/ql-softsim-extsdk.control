@@ -1,0 +1,14 @@
+Package: ql-softsim-extsdk
+Version: git-r01
+Description: ql-softsim-extsdk version git-r01
+ Quectel Softsim SDK
+Section: base
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: Quectel-Wireless-Solutions-Co-Ltd.-Proprietary 
+Architecture: mdm9607
+OE: ql-softsim-extsdk
+Homepage: https://www.quectel.com/
+Depends: libtime-genoff1 (>= git), libdsutils1 (>= git), adns (>= 1.4), libconfigdb0 (>= git), diag (>= git), libxml0 (>= git), ql-syslog (>= git), ql-manager (>= git), qmi (>= git), qmi-framework (>= git), libc6 (>= 2.22), libglib-2.0-0 (>= 2.44.1), ql-common-tools (>= git)
+Recommends: update-rc.d
+Source: file://quectel/softsim-extsdk/

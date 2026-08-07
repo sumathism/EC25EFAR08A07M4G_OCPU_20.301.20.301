@@ -1,0 +1,12 @@
+Package: qahw
+Version: git-r0
+Description: qahw version git-r0
+ qahw
+Section: multimedia
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: BSD
+Architecture: armv7a-vfp-neon
+OE: qahw
+Depends: liblog0 (>= 1.0), libhardware0 (>= git), libcutils0 (>= 1.0), libstdc++6 (>= 4.9.3), libc6 (>= 2.22)
+Source: file://hardware/qcom/audio/qahw/

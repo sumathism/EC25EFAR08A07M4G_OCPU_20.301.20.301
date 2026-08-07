@@ -1,0 +1,13 @@
+/usr/bin/quectel_ble_service
+/usr/bin/bt_test.conf
+/usr/bin/bt_bootstrap
+/usr/bin/bt_test
+/usr/bin/bt_test.sh
+/usr/bin/mdm_ril_daemon.sh
+/usr/bin/bt_hf_audio.sh
+/usr/bin/bt_pan.sh
+/usr/bin/bt_hfg_audio.sh
+/etc/bluetooth/
+/usr/bin/bt_audio_service
+/etc/bluetooth/firmware.conf
+/usr/bin/synergy.sh

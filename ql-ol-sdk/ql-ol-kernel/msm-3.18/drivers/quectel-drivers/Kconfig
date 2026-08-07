@@ -1,0 +1,60 @@
+#
+# Optional quectel drivers configuration
+#
+
+menu "Quectel optional drivers"
+
+config QUECTEL_DRIVER
+	bool "quectel driver"
+	default y
+
+if QUECTEL_DRIVER
+
+config QL_LPM
+	tristate "quectel lpm driver(Recommend)"
+	default m
+	---help---
+	  Quectel lpm driver, refer to document.
+
+config QSTART
+	bool "QSTART"
+	default y
+
+config QTZONE
+	bool "quectel trust zone support"
+	default n
+	---help---
+	  Trust zone function, consult quectel engineer further.
+
+config QSMD
+	bool "QSMD"
+	default n
+	---help---
+	  legacy
+
+config QSMEM
+	bool "QSMEM"
+	default n
+	---help---
+	  legacy
+
+config QRAWDATA
+	bool "QRAWDATA"
+	default y
+
+config QFASTSHUTDOWN
+	bool "QFASTSHUTDOWN"
+	default y
+
+config QTEE
+	bool "Quectel QTEE Driver"
+	default y
+	---help---
+	  Trust zone function, consult quectel engineer further.
+
+config QFASTSHUTDOWN
+	bool "QFASTSHUTDOWN"
+	default y
+
+endif
+endmenu

@@ -1,0 +1,6 @@
+/usr/include/ql-usb/
+/usr/include/ql-usb/usb_product_config.h
+/usr/include/ql-usb/ql_usb.h
+/usr/lib/libql_usb.la
+/usr/lib/libql_usb.so
+/usr/lib/pkgconfig/ql-usb.pc

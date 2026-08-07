@@ -1,0 +1,14 @@
+Package: libxtadapter-dbg
+Version: git-r1
+Description: xt-adapter version git-r1 - Debugging files
+ XT Adapter  This package contains ELF symbols and related sources for
+ debugging purposes.
+Section: devel
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: Qualcomm-Technologies-Inc.-Proprietary
+Architecture: armv7a-vfp-neon
+OE: xt-adapter
+Recommends: libsqlite3-dbg, diag-dbg, libdataitems-dbg, libstdc++-dbg, libloc-pla-dbg, libssl-dbg, libtime-genoff-dbg, libcrypto-dbg, libc6-dbg, libxml-dbg, izat-core-dbg, qmi-framework-dbg, qmi-dbg, system-core-dbg, libglib-2.0-dbg, libgcc-s-dbg, data-oss-dbg, libcutils-dbg, loc-net-iface-dbg, loc-hal-dbg, liblog-dbg, libconfigdb-dbg, libdsutils-dbg, libqmi-client-helper-dbg, data-dbg, libloc-base-util-dbg, libloc-stub-dbg, libgps-utils-so-dbg
+Provides: xt-adapter-dbg
+Source: file://gps-noship/XT/XTAdapter/

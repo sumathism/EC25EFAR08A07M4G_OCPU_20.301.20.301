@@ -1,0 +1,7 @@
+/etc/init.d/mount_oemapp.sh
+/usr/lib/libql_softsim_extsdk.so.0.0.0
+/oemapp/
+/etc/ql_softsim_filename
+/usr/bin/ql_softsim
+/etc/init.d/start_z_oemapp_le
+/usr/lib/libql_softsim_extsdk.so.0

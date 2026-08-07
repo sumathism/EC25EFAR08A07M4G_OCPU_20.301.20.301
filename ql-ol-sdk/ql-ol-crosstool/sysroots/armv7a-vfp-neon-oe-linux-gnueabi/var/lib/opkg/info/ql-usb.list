@@ -1,0 +1,4 @@
+/usr/lib/libql_usb.so.1
+/usr/bin/ql_usbcfg
+/usr/lib/libql_usb.so.1.0.0
+/etc/init.d/start_ql_usbcfg_le

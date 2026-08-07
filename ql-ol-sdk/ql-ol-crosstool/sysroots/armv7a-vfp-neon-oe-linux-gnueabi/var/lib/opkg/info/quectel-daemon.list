@@ -1,0 +1,5 @@
+/usr/bin/quectel_daemon
+/usr/data/ring/
+/usr/data/ring/ringtone1.wav
+/usr/data/ring/ringing1.wav
+/etc/init.d/quectel_daemon

@@ -1,0 +1,15 @@
+Package: libhlos-wrapper-api-dev
+Version: git-r1
+Description: hlos-wrapper-api version git-r1 - Development files
+ HLOS Wrapper API  This package contains symbolic links, header files, and
+ related items necessary for software development.
+Section: devel
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: Qualcomm-Technologies-Inc.-Proprietary
+Architecture: armv7a-vfp-neon
+OE: hlos-wrapper-api
+Depends: libhlos-wrapper-api1 (= git-r1)
+Recommends: libglib-2.0-dev, libgcc-s-dev, liblog-dev, liblbs-core-dev, liblocationservice-dev, libdataitems-dev, libgps-utils-so-dev, libdsutils-dev, libloc-stub-dev, libloc-base-util-dev, data-dev, libxtadapter-dev, qmi-dev, izat-core-dev, libssl-dev, libcrypto-dev, libstdc++-dev, libc6-dev, libtime-genoff-dev, loc-hal-dev, libsqlite3-dev, system-core-dev, libxml-dev, libqmi-client-helper-dev, loc-net-iface-dev, libcutils-dev, libloc-pla-dev, data-oss-dev, qmi-framework-dev, libconfigdb-dev, diag-dev
+Provides: hlos-wrapper-api-dev
+Source: file://gps-noship/libs/hlos-wrapper-api/

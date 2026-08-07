@@ -1,0 +1,13 @@
+Package: python3-reprlib
+Version: 3.4.3-r1.0
+Description: Python alternate repr() implementation
+ The Python Programming Language.
+Section: devel/python
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: PSFv2
+Architecture: armv7a-vfp-neon
+OE: python3
+Homepage: http://www.python.org
+Depends: python3-core
+Source: http://www.python.org/ftp/python/3.4.3/Python-3.4.3.tar.xz file://python-config.patch file://000-cross-compile.patch file://020-dont-compile-python-files.patch file://030-fixup-include-dirs.patch file://070-dont-clean-ipkg-install.patch file://080-distutils-dont_adjust_files.patch file://110-enable-zlib.patch file://130-readline-setup.patch file://150-fix-setupterm.patch file://0001-h2py-Fix-issue-13032-where-it-fails-with-UnicodeDeco.patch file://makerace.patch file://sitecustomize.py file://03-fix-tkinter-detection.patch file://04-default-is-optimized.patch file://avoid_warning_about_tkinter.patch file://cgi_py.patch file://host_include_contamination.patch file://python-3.3-multilib.patch file://shutil-follow-symlink-fix.patch file://sysroot-include-headers.patch file://unixccompiler.patch file://avoid-ncursesw-include-path.patch file://python3-use-CROSSPYTHONPATH-for-PYTHON_FOR_BUILD.patch file://python3-setup.py-no-host-headers-libs.patch file://sysconfig.py-add-_PYTHON_PROJECT_SRC.patch file://setup.py-check-cross_compiling-when-get-FLAGS.patch file://setup.py-find-libraries-in-staging-dirs.patch

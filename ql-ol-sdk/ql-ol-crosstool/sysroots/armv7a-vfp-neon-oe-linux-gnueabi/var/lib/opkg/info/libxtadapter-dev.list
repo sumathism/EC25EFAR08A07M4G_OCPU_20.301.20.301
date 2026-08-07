@@ -1,0 +1,5 @@
+/usr/lib/libxtadapter.la
+/usr/lib/pkgconfig/xt-adapter.pc
+/usr/lib/libxtadapter.so
+/usr/include/xt-adapter/
+/usr/include/xt-adapter/XtAdapter.h

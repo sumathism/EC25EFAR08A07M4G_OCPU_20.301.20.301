@@ -1,0 +1,6 @@
+
+       if true; then
+        [ -n "$D" ] && OPT="-r $D" || OPT="-s"
+        update-rc.d $OPT -f qseecomd remove
+        update-rc.d $OPT qseecomd start 80 2 3 4 5 . stop 20 0 1 6 .
+       fi

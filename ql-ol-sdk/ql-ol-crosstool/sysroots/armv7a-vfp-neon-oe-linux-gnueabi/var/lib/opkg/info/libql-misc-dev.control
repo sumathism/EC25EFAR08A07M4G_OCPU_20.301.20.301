@@ -1,0 +1,15 @@
+Package: libql-misc-dev
+Version: git-r1
+Description: ql-misc version git-r1 - Development files
+ Quectel misc  This package contains symbolic links, header files, and
+ related items necessary for software development.
+Section: devel
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: CLOSED
+Architecture: mdm9607
+OE: ql-misc
+Depends: libql-misc1 (= git-r1)
+Recommends: libc6-dev, libgcc-s-dev
+Provides: ql-misc-dev
+Source: file://quectel/misc/

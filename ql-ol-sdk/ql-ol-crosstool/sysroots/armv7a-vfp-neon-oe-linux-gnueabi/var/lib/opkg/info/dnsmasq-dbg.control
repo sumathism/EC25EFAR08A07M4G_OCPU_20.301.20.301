@@ -1,0 +1,15 @@
+Package: dnsmasq-dbg
+Version: 2.91-r0
+Description: dnsmasq version 2.91-r0 - Debugging files
+ Dnsmasq is a lightweight, easy to configure DNS forwarder and DHCP
+ server.  This package contains ELF symbols and related sources for
+ debugging purposes.
+Section: devel
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: GPL
+Architecture: armv7a-vfp-neon
+OE: dnsmasq
+Homepage: http://www.thekelleys.org.uk/dnsmasq/doc.html
+Recommends: libc6-dbg
+Source: http://www.thekelleys.org.uk/dnsmasq/dnsmasq-2.91.tar.gz;name=dnsmasq-2.91 file://init file://dnsmasq.conf file://dnsmasq_script.sh

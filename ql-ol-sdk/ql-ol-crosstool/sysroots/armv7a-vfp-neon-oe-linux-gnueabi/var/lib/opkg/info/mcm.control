@@ -1,0 +1,12 @@
+Package: mcm
+Version: git-r3
+Description: mcm version git-r3
+ mcm headers
+Section: base
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: Qualcomm-Technologies-Inc.-Proprietary
+Architecture: mdm9607
+OE: mcm
+Homepage: http://support.cdmatech.com
+Source: file://mcm-api/

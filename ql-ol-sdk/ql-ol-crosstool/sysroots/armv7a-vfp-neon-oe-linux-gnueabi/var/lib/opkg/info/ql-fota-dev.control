@@ -1,0 +1,15 @@
+Package: ql-fota-dev
+Version: git-r21
+Description: ql-fota version git-r21 - Development files
+ Quectel FOTA Configuration  This package contains symbolic links, header
+ files, and related items necessary for software development.
+Section: devel
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: Quectel-Wireless-Solutions-Co-Ltd.-Proprietary 
+Architecture: mdm9607
+OE: ql-fota
+Homepage: https://www.quectel.com/
+Depends: ql-fota (= git-r21)
+Recommends: adns-dev, ql-syslog-dev, libql-zip-verify-dev, libdsutils-dev, libcurl-dev, libc6-dev, ql-common-tools-dev, libssl-dev, libglib-2.0-dev, curl-dev, libcrypto-dev, ql-manager-dev, libtime-genoff-dev, qmi-dev, libz-dev, diag-dev, libconfigdb-dev, libxml-dev, qmi-framework-dev
+Source: file://quectel/fota/

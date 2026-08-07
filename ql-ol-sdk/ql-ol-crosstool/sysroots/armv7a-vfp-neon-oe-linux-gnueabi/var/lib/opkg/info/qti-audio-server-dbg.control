@@ -1,0 +1,14 @@
+Package: qti-audio-server-dbg
+Version: git-r0
+Description: qti-audio-server version git-r0 - Debugging files
+ qti-audio-server Library  This package contains ELF symbols and related
+ sources for debugging purposes.
+Section: devel
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: Qualcomm-Technologies-Inc.-Proprietary
+Architecture: mdm9607
+OE: qti-audio-server
+Homepage: http://support.cdmatech.com
+Recommends: system-core-dbg, libstdc++-dbg, qahw-dbg, libgcc-s-dbg, liblog-dbg, tinyalsa-dbg, libhardware-dbg, native-frameworks-dbg, libc6-dbg, libcutils-dbg
+Source: file://audio/mm-audio/qti-audio-server/ file://qti_audio_server_daemon.sh file://qti_audio_server_daemon.service

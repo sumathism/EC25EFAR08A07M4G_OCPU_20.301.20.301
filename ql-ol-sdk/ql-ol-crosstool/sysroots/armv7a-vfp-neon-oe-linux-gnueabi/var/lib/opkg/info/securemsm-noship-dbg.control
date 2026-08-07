@@ -1,0 +1,15 @@
+Package: securemsm-noship-dbg
+Version: 1.0-1
+Description: securemsm-noship version 1.0-1 - Debugging files
+ securemsmnoship with QseecomAPI user space library to interact with
+ qseecom driver  This package contains ELF symbols and related sources for
+ debugging purposes.
+Section: devel
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: Qualcomm-Technologies-Inc.-Proprietary
+Architecture: mdm9607
+OE: securemsm-noship
+Homepage: http://support.cdmatech.com
+Recommends: libc6-dbg
+Source: file://security/securemsm-noship/

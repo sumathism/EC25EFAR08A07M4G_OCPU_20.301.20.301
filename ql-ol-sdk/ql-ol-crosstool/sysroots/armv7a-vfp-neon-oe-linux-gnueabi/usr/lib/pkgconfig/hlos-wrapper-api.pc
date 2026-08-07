@@ -1,0 +1,10 @@
+prefix=/usr
+exec_prefix=/usr
+libdir=/usr/lib
+includedir=/usr/include
+
+Name: hlos-wrapper-api
+Description: QTI GPS HLOS WRAPPER API
+Version: @VERSION
+Libs: -L${libdir} -lhlos_wrapper_api
+Cflags: -I${includedir}/hlos-wrapper-api

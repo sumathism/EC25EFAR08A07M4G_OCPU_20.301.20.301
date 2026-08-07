@@ -1,0 +1,16 @@
+Package: cmake-dev
+Version: 3.3.1-r0
+Description: Cross-platform, open-source make system - Development files
+ Cross-platform, open-source make system.  This package contains symbolic
+ links, header files, and related items necessary for software
+ development.
+Section: devel
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: BSD
+Architecture: armv7a-vfp-neon
+OE: cmake
+Homepage: http://www.cmake.org/
+Depends: cmake (= 3.3.1-r0)
+Recommends: libarchive-dev, libgcc-s-dev, ncurses-dev, libcurl-dev, libz-dev, curl-dev, libstdc++-dev, libc6-dev, libexpat-dev, bzip2-dev, xz-dev
+Source: http://www.cmake.org/files/v3.3/cmake-3.3.1.tar.gz file://support-oe-qt4-tools-names.patch file://qt4-fail-silent.patch

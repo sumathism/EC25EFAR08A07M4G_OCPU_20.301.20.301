@@ -1,0 +1,14 @@
+Package: libturbojpeg0
+Version: 1:3.0.0-r0
+Description: Hardware accelerated JPEG compression/decompression library
+ A SIMD-accelerated JPEG codec which provides only TurboJPEG APIs
+Section: base
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: BSD-3-Clause
+Architecture: armv7a-vfp-neon
+OE: libjpeg-turbo
+Homepage: http://libjpeg-turbo.org/
+Depends: libc6 (>= 2.22)
+Provides: libturbojpeg
+Source: http://downloads.sourceforge.net/libjpeg-turbo/libjpeg-turbo-3.0.0.tar.gz

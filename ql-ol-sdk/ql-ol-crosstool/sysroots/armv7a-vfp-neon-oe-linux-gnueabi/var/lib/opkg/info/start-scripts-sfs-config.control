@@ -1,0 +1,12 @@
+Package: start-scripts-sfs-config
+Version: 1.0-r2
+Description: start-scripts-sfs-config version 1.0-r2
+ Start up script for secure file system configuration
+Section: base
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: Qualcomm-Technologies-Inc.-Proprietary
+Architecture: armv7a-vfp-neon
+OE: start-scripts-sfs-config
+Homepage: http://support.cdmatech.com
+Source: file://sfs_config file://sfsconfig.service

@@ -1,0 +1,13 @@
+Package: ql-fota
+Version: git-r21
+Description: ql-fota version git-r21
+ Quectel FOTA Configuration
+Section: base
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: Quectel-Wireless-Solutions-Co-Ltd.-Proprietary 
+Architecture: mdm9607
+OE: ql-fota
+Homepage: https://www.quectel.com/
+Depends: libtime-genoff1 (>= git), libssl1.0.0 (>= 1.0.2h), libz1 (>= 1.2.8), libdsutils1 (>= git), adns (>= 1.4), libconfigdb0 (>= git), diag (>= git), libxml0 (>= git), libql-zip-verify2 (>= git), ql-syslog (>= git), ql-manager (>= git), qmi (>= git), libcurl4 (>= 8.10.0), libcrypto1.0.0 (>= 1.0.2h), libc6 (>= 2.22), libglib-2.0-0 (>= 2.44.1), ql-common-tools (>= git), qmi-framework (>= git)
+Source: file://quectel/fota/

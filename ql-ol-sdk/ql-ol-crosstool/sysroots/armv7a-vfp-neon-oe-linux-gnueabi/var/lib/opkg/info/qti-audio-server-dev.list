@@ -1,0 +1,7 @@
+/usr/include/mm-audio/qti-audio-server/
+/usr/include/mm-audio/qti-audio-server/qti_audio_server_client.h
+/usr/lib/pkgconfig/qti-audio-server.pc
+/usr/include/mm-audio/qti-audio-server/qti_audio_server.h
+/usr/lib/libqtiaudioserver.la
+/usr/include/mm-audio/qti-audio-server/qti_audio_server_callback.h
+/usr/include/mm-audio/qti-audio-server/qti_audio_server_interface.h

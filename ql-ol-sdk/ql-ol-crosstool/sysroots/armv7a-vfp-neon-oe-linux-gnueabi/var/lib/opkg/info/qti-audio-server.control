@@ -1,0 +1,13 @@
+Package: qti-audio-server
+Version: git-r0
+Description: qti-audio-server version git-r0
+ qti-audio-server Library
+Section: base
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: Qualcomm-Technologies-Inc.-Proprietary
+Architecture: mdm9607
+OE: qti-audio-server
+Homepage: http://support.cdmatech.com
+Depends: libgcc1 (>= 4.9.3), libhardware0 (>= git), libstdc++6 (>= 4.9.3), liblog0 (>= 1.0), tinyalsa (>= git), libcutils0 (>= 1.0), libc6 (>= 2.22), qahw (>= git), native-frameworks (>= git), system-core (>= git)
+Source: file://audio/mm-audio/qti-audio-server/ file://qti_audio_server_daemon.sh file://qti_audio_server_daemon.service

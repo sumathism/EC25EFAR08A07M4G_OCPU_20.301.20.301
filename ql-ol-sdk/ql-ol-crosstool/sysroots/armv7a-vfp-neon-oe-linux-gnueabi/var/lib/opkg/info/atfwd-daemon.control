@@ -1,0 +1,13 @@
+Package: atfwd-daemon
+Version: git-r3
+Description: atfwd-daemon version git-r3
+ Daemon to handle AT commands
+Section: base
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: Qualcomm-Technologies-Inc.-Proprietary
+Architecture: mdm9607
+OE: atfwd-daemon
+Homepage: http://support.cdmatech.com
+Depends: wolfssl (>= 3.4.0), libcurl4 (>= 8.10.0), libdsutils1 (>= git), libql-misc1 (>= git), ql-manager (>= git), qmi (>= git), qmi-framework (>= git), alsa-intf (>= git), libc6 (>= 2.22), libglib-2.0-0 (>= 2.44.1), quectel-tts-sdk (>= git), ql-common-tools (>= git), quectel-audio-lib (>= git), ql-fota (>= git)
+Source: file://mdm-ss-mgr/atfwd-daemon/

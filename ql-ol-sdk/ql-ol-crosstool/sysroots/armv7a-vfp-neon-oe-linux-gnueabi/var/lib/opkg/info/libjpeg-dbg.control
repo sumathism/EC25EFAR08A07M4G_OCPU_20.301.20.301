@@ -1,0 +1,17 @@
+Package: libjpeg-dbg
+Version: 1:3.0.0-r0
+Description: Hardware accelerated JPEG compression/decompression library - Debugging files
+ libjpeg-turbo is a derivative of libjpeg that uses SIMD instructions
+ (MMX, SSE2, NEON) to accelerate baseline JPEG compression and
+ decompression  This package contains ELF symbols and related sources for
+ debugging purposes.
+Section: devel
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: BSD-3-Clause
+Architecture: armv7a-vfp-neon
+OE: libjpeg-turbo
+Homepage: http://libjpeg-turbo.org/
+Recommends: libc6-dbg, libturbojpeg-dbg
+Provides: libjpeg-turbo-dbg
+Source: http://downloads.sourceforge.net/libjpeg-turbo/libjpeg-turbo-3.0.0.tar.gz

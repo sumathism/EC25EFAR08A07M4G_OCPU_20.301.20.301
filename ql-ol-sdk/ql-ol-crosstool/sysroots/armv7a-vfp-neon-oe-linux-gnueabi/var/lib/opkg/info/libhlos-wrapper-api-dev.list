@@ -1,0 +1,5 @@
+/usr/lib/libhlos_wrapper_api.so
+/usr/lib/pkgconfig/hlos-wrapper-api.pc
+/usr/lib/libhlos_wrapper_api.la
+/usr/include/hlos-wrapper-api/hlos-wrapper-api.h
+/usr/include/hlos-wrapper-api/

@@ -1,0 +1,13 @@
+Package: mtd-utils-dbg
+Version: 1.0-r1
+Description: mtd-utils version 1.0-r1 - Debugging files
+ Tools for managing memory technology devices.  This package contains ELF
+ symbols and related sources for debugging purposes.
+Section: devel
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: GPLv2
+Architecture: armv7a-vfp-neon
+OE: mtd-utils
+Recommends: libc6-dbg, libz-dbg, liblzo2-dbg, util-linux-libuuid-dbg
+Source: file://mtd-utils

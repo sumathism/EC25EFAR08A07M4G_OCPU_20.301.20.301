@@ -1,0 +1,13 @@
+Package: ql-ol-extsdk
+Version: git-r01
+Description: ql-ol-extsdk version git-r01
+ Quectel High Data Open API
+Section: base
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: Quectel-Wireless-Solutions-Co-Ltd.-Proprietary 
+Architecture: mdm9607
+OE: ql-ol-extsdk
+Homepage: https://www.quectel.com/
+Depends: libssl1.0.0 (>= 1.0.2h), adns (>= 1.4), mcm-core (>= git), liblog0 (>= 1.0), libdsutils1 (>= git), libz1 (>= 1.2.8), qmi (>= git), alsa-intf (>= git), libacdbmapper1 (>= git), libtime-genoff1 (>= git), data-oss (>= git), libadiertac1 (>= 1.0), libaudioalsa1 (>= git), diag (>= git), libconfigdb0 (>= git), libstdc++6 (>= 4.9.3), libglib-2.0-0 (>= 2.44.1), acdbloader (>= git), libxml0 (>= git), libacdbrtac1 (>= 1.0), ql-syslog (>= git), libcrypto1.0.0 (>= 1.0.2h), libqmi-client-helper1 (>= git), libc6 (>= 2.22), ql-common-tools (>= git), data (>= git), quectel-audio-lib (>= git), qmi-framework (>= git), libaudcal1 (>= git), ql-manager (>= git), libcurl4 (>= 8.10.0)
+Source: file://quectel-openlinux-extsdk/

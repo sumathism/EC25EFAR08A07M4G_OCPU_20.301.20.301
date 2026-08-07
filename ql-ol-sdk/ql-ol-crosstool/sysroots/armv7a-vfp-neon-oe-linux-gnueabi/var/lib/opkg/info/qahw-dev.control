@@ -1,0 +1,14 @@
+Package: qahw-dev
+Version: git-r0
+Description: qahw version git-r0 - Development files
+ qahw  This package contains symbolic links, header files, and related
+ items necessary for software development.
+Section: devel
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: BSD
+Architecture: armv7a-vfp-neon
+OE: qahw
+Depends: qahw (= git-r0)
+Recommends: libhardware-dev, libcutils-dev, liblog-dev, system-media-dev, libstdc++-dev, libc6-dev
+Source: file://hardware/qcom/audio/qahw/

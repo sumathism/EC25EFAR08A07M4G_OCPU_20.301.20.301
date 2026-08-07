@@ -1,0 +1,13 @@
+Package: ql-firewall
+Version: git-r21
+Description: ql-firewall version git-r21
+ Quectel Manager Modules
+Section: base
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: Quectel-Wireless-Solutions-Co-Ltd.-Proprietary 
+Architecture: mdm9607
+OE: ql-firewall
+Homepage: https://www.quectel.com/
+Depends: ql-syslog (>= git), libc6 (>= 2.22)
+Source: file://quectel/ql-firewall/

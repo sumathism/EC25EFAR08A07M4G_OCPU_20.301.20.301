@@ -1,0 +1,15 @@
+Package: ql-forward-dev
+Version: git-r01
+Description: ql-forward version git-r01 - Development files
+ Quectel Data forward applicant  This package contains symbolic links,
+ header files, and related items necessary for software development.
+Section: devel
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: Quectel-Wireless-Solutions-Co-Ltd.-Proprietary 
+Architecture: mdm9607
+OE: ql-forward
+Homepage: https://www.quectel.com/
+Depends: qmi-framework, ql-common-tools
+Recommends: libcurl-dev, curl-dev, update-rc.d-dev, libc6-dev, qmi-framework-dev, ql-common-tools-dev, initscripts-dev
+Source: file://quectel/forward/

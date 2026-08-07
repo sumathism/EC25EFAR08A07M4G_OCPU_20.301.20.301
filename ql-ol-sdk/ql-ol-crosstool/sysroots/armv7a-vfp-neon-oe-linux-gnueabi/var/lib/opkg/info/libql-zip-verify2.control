@@ -1,0 +1,14 @@
+Package: libql-zip-verify2
+Version: git-r0
+Description: ql-zip-verify version git-r0
+ quectel secure fota
+Section: base
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: Quectel-Wireless-Solutions-Co-Ltd.-Proprietary 
+Architecture: mdm9607
+OE: ql-zip-verify
+Homepage: https://www.quectel.com/
+Depends: libglib-2.0-0 (>= 2.44.1), libcrypto1.0.0 (>= 1.0.2h), libc6 (>= 2.22), libssl1.0.0 (>= 1.0.2h)
+Provides: ql-zip-verify
+Source: file://quectel/ql-security/ql-zip_verify/

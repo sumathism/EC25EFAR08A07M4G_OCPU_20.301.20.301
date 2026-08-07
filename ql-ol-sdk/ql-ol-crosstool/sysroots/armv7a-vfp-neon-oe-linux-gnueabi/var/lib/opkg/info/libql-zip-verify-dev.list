@@ -1,0 +1,6 @@
+/usr/lib/libql_zip_verify.la
+/usr/lib/libql_zip_verify.so
+/usr/include/ql-zip-verify/ql_zip_verify.h
+/usr/include/ql-zip-verify/zip_verify_log.h
+/usr/lib/pkgconfig/ql-zip-verify.pc
+/usr/include/ql-zip-verify/

@@ -1,0 +1,14 @@
+Package: securemsm
+Version: git-r1
+Description: securemsm version git-r1
+ Securemsm library with sampleclient used to test sampleapp with qseecom
+ driver through QSEEComApi library
+Section: base
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: Qualcomm-Technologies-Inc.-Proprietary
+Architecture: mdm9607
+OE: securemsm
+Homepage: http://support.cdmatech.com
+Depends: securemsm-noship (>= 1.0), libc6 (>= 2.22)
+Source: file://security/securemsm/

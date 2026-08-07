@@ -1,0 +1,13 @@
+Package: ql-usb
+Version: git-r21
+Description: ql-usb version git-r21
+ Quectel USB Configuration
+Section: base
+Priority: optional
+Maintainer: OE-Core Developers <openembedded-core@lists.openembedded.org>
+License: Quectel-Wireless-Solutions-Co-Ltd.-Proprietary 
+Architecture: mdm9607
+OE: ql-usb
+Homepage: https://www.quectel.com/
+Depends: ql-common-tools (>= git), adns (>= 1.4), libc6 (>= 2.22)
+Source: file://quectel/usb/

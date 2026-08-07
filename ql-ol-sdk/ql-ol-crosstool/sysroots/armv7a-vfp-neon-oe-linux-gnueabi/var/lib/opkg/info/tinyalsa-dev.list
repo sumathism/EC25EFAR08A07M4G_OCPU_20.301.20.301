@@ -1,0 +1,5 @@
+/usr/lib/libtinyalsa.so
+/usr/include/tinyalsa/
+/usr/lib/pkgconfig/tinyalsa.pc
+/usr/lib/libtinyalsa.la
+/usr/include/tinyalsa/asoundlib.h

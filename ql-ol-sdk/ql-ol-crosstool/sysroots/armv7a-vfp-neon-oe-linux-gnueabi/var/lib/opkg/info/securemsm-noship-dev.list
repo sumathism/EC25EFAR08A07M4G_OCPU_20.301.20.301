@@ -1,0 +1,11 @@
+/usr/lib/libssd.so
+/usr/lib/libdrmtime.la
+/usr/lib/libQSEEComAPI.la
+/usr/lib/pkgconfig/securemsm-noship.pc
+/usr/lib/librpmb.la
+/usr/lib/libdrmtime.so
+/usr/lib/libdrmfs.la
+/usr/lib/libssd.la
+/usr/lib/libQSEEComAPI.so
+/usr/lib/librpmb.so
+/usr/lib/libdrmfs.so
