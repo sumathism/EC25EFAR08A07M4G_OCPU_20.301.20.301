@@ -1,0 +1,27 @@
+#! /bin/sh
+
+set -e
+
+case "$1" in
+start)
+	# set modem restart level in quectel-monitor-daemon process
+    echo -n "Starting Quectel Firewall: "
+    start-stop-daemon -S -b -a /usr/bin/ql_firewalld
+    echo "done"
+    ;;
+  stop)
+    echo -n "Stopping security-auth: "
+    start-stop-daemon -K -n ql_firewalld
+    echo "done"
+    ;;
+  restart)
+    $0 stop
+    $0 start
+    ;;
+  *)
+    echo "Usage security-auth{ start | stop | restart }" >&2
+    exit 1
+    ;;
+esac
+
+exit 0

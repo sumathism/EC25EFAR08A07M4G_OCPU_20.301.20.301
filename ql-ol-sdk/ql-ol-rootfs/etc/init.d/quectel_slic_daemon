@@ -1,0 +1,42 @@
+#  ---------------------------------------------------------------------------
+#   Copyright (c) 2012 Qualcomm Technologies, Inc.  All Rights Reserved.
+#   Qualcomm Technologies Proprietary and Confidential.
+#  ---------------------------------------------------------------------------
+#
+
+#! /bin/sh
+#
+# init.d script for quectel daemon
+
+set -e
+
+case "$1" in
+       start)
+                echo -n "Starting quectel_slic_daemon: "
+                for LINE in $(cat /data/slic.conf)
+                do
+                    echo read slic.conf : $LINE
+                    if [ 1 -eq $LINE ]
+                    then
+                        echo "Starting quectel_slic_daemon..."
+                        start-stop-daemon -S -b -a /usr/bin/quectel_slic_daemon
+                    fi
+                done
+                echo "done"
+                ;;
+       stop)
+                echo -n "Stopping quectel_slic_daemon: "
+                start-stop-daemon -K -n quectel_slic_daemon
+                echo "done"
+                ;;
+       restart)
+                $0 stop
+                $0 start
+                ;;
+       *)
+                echo "Usage: quectel_slic_daemon { start | stop | restart }" >&2
+                exit 1
+                ;;
+esac
+
+exit 0
