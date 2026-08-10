@@ -1,0 +1,6 @@
+# Build artifact: extracted rootfs tree. Regenerated from ql-ol-sdk/ql-ol-rootfs.tar.gz
+# at build time. Never track this directly in git - it contains device nodes
+# (/dev/console, /dev/null, etc.) which git cannot represent; on a plain checkout
+# they silently become empty regular files instead of real char/block devices,
+# which breaks boot. Custom rootfs additions live in ql-ol-sdk/rootfs-overlay/ instead.
+ql-ol-sdk/ql-ol-rootfs/
