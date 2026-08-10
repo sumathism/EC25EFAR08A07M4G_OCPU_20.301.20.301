@@ -10,7 +10,11 @@ TOPDIR:=$(shell pwd)
 ABOOT_DIR:=$(TOPDIR)/ql-ol-bootloader
 KERNEL_DIR:=$(TOPDIR)/ql-ol-kernel
 ROOTFS_DIR:=$(TOPDIR)/ql-ol-rootfs
+ROOTFS_TARBALL:=$(TOPDIR)/ql-ol-rootfs.tar.gz
+ROOTFS_OVERLAY_DIR:=$(TOPDIR)/rootfs-overlay
 EXTSDK_DIR:=$(TOPDIR)/ql-ol-extsdk
+GO_AUTOCONNECT_DIR:=$(EXTSDK_DIR)/example/ql_autoconnect_go
+GO_AUTOCONNECT_BIN:=ql_autoconnect
 #export TOPDIR
 
 empty:=
@@ -18,6 +22,7 @@ space:= $(empty) $(empty)
 $(if $(findstring $(space),$(TOPDIR)),$(error ERROR: The path to the work directory must not include any spaces))
 
 crosstool=crosstool
+rootfs_base=rootfs_base
 aboot=aboot
 kernel_menuconfig=kernel_menuconfig
 debug_kernel_menuconfig=debug_kernel_menuconfig
@@ -52,7 +57,7 @@ endif
 #$(shell source ql-ol-crosstool/ql-ol-crosstool-env-init)
 $(shell mkdir -p target)
 
-world : $(crosstool) $(kernel) $(kernel_module) $(rootfs) $(usrdata) $(squashrootfs)
+world : $(crosstool) $(rootfs_base) $(kernel) $(kernel_module) $(rootfs) $(usrdata) $(squashrootfs)
 
 $(crosstool):
 ifneq ($(CROSSTOOL_FLAG), 1)
@@ -95,7 +100,21 @@ else
 FAKEROOT=fakeroot
 endif
 
-$(rootfs):
+$(rootfs_base):
+	@echo -e "\033[32m###### (re)building $(ROOTFS_DIR) from $(ROOTFS_TARBALL) + $(ROOTFS_OVERLAY_DIR) ######\033[0m"
+	rm -rf $(ROOTFS_DIR)
+	mkdir -p $(ROOTFS_DIR)
+	if [ "$$(id -u)" = "0" ]; then \
+		echo "Running as root: extracting directly (real device nodes, no fakeroot needed)." ; \
+		tar xzf $(ROOTFS_TARBALL) -C $(ROOTFS_DIR) ; \
+		cp -a $(ROOTFS_OVERLAY_DIR)/. $(ROOTFS_DIR)/ ; \
+	else \
+		echo "Running unprivileged: extracting via $(FAKEROOT) (device nodes faked via pseudo)." ; \
+		$(FAKEROOT) tar xzf $(ROOTFS_TARBALL) -C $(ROOTFS_DIR) ; \
+		$(FAKEROOT) cp -a $(ROOTFS_OVERLAY_DIR)/. $(ROOTFS_DIR)/ ; \
+	fi
+
+$(rootfs): go_autoconnect_install
 	cd $(TOPDIR) ; chmod +x ./ql-ol-extsdk/tools/quectel_ubi/* ; \
 	$(FAKEROOT) ./ql-ol-extsdk/tools/quectel_ubi/mkfs.ubifs -r ql-ol-rootfs -o mdm9607-perf-sysfs.ubifs ${MKUBIFS_ARGS}
 ifeq ($(has_usrfs),true)
@@ -125,7 +144,14 @@ $(debug_version): kernel kernel_module rootfs
 $(extsdk):
 	cd $(EXTSDK_DIR)/example ; make clean || exit ; make || exit
 
-clean: aboot/clean kernel/clean rootfs/clean extsdk/clean usrdata/clean
+go_autoconnect:
+	cd $(GO_AUTOCONNECT_DIR) ; make clean || exit ; make || exit
+
+go_autoconnect_install: go_autoconnect
+	mkdir -p $(ROOTFS_DIR)/usr/bin
+	cp $(GO_AUTOCONNECT_DIR)/$(GO_AUTOCONNECT_BIN) $(ROOTFS_DIR)/usr/bin/
+
+clean: aboot/clean kernel/clean rootfs/clean rootfs_base/clean extsdk/clean usrdata/clean go_autoconnect/clean
 
 aboot/clean:
 	cd $(ABOOT_DIR) ; make -j 4 mdm9607 clean ; rm -rf build-mdm9607
@@ -142,9 +168,16 @@ kernel/distclean:
 rootfs/clean:
 	rm -rf target/mdm9607-perf-sysfs.ubi*
 
+rootfs_base/clean:
+	rm -rf $(ROOTFS_DIR)
+
 usrdata/clean:
 	rm -rf target/usrdata.ubi*
 
 extsdk/clean:
 	cd $(EXTSDK_DIR)/example ; make clean || exit
+
+go_autoconnect/clean:
+	cd $(GO_AUTOCONNECT_DIR) ; make clean || exit
+	rm -f $(ROOTFS_DIR)/usr/bin/$(GO_AUTOCONNECT_BIN)
 
