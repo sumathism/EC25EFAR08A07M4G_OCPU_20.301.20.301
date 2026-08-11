@@ -15,6 +15,8 @@ ROOTFS_OVERLAY_DIR:=$(TOPDIR)/rootfs-overlay
 EXTSDK_DIR:=$(TOPDIR)/ql-ol-extsdk
 GO_AUTOCONNECT_DIR:=$(EXTSDK_DIR)/example/ql_autoconnect_go
 GO_AUTOCONNECT_BIN:=ql_autoconnect
+GO_BEACON_DIR:=$(EXTSDK_DIR)/example/ql_beacon_go
+GO_BEACON_BIN:=ql_beacon
 #export TOPDIR
 
 empty:=
@@ -114,7 +116,7 @@ $(rootfs_base):
 		$(FAKEROOT) cp -a $(ROOTFS_OVERLAY_DIR)/. $(ROOTFS_DIR)/ ; \
 	fi
 
-$(rootfs): go_autoconnect_install
+$(rootfs): go_autoconnect_install go_beacon_install
 	cd $(TOPDIR) ; chmod +x ./ql-ol-extsdk/tools/quectel_ubi/* ; \
 	$(FAKEROOT) ./ql-ol-extsdk/tools/quectel_ubi/mkfs.ubifs -r ql-ol-rootfs -o mdm9607-perf-sysfs.ubifs ${MKUBIFS_ARGS}
 ifeq ($(has_usrfs),true)
@@ -149,9 +151,16 @@ go_autoconnect:
 
 go_autoconnect_install: go_autoconnect
 	mkdir -p $(ROOTFS_DIR)/usr/bin
-	cp $(GO_AUTOCONNECT_DIR)/$(GO_AUTOCONNECT_BIN) $(ROOTFS_DIR)/usr/bin/
+	install -m 0755 $(GO_AUTOCONNECT_DIR)/$(GO_AUTOCONNECT_BIN) $(ROOTFS_DIR)/usr/bin/
 
-clean: aboot/clean kernel/clean rootfs/clean rootfs_base/clean extsdk/clean usrdata/clean go_autoconnect/clean
+go_beacon:
+	cd $(GO_BEACON_DIR) ; make clean || exit ; make || exit
+
+go_beacon_install: go_beacon
+	mkdir -p $(ROOTFS_DIR)/usr/bin
+	install -m 0755 $(GO_BEACON_DIR)/$(GO_BEACON_BIN) $(ROOTFS_DIR)/usr/bin/
+
+clean: aboot/clean kernel/clean rootfs/clean rootfs_base/clean extsdk/clean usrdata/clean go_autoconnect/clean go_beacon/clean
 
 aboot/clean:
 	cd $(ABOOT_DIR) ; make -j 4 mdm9607 clean ; rm -rf build-mdm9607
@@ -180,4 +189,8 @@ extsdk/clean:
 go_autoconnect/clean:
 	cd $(GO_AUTOCONNECT_DIR) ; make clean || exit
 	rm -f $(ROOTFS_DIR)/usr/bin/$(GO_AUTOCONNECT_BIN)
+
+go_beacon/clean:
+	cd $(GO_BEACON_DIR) ; make clean || exit
+	rm -f $(ROOTFS_DIR)/usr/bin/$(GO_BEACON_BIN)
 
