@@ -113,16 +113,17 @@ static int spinand_cmd(struct spi_device *spi, struct spinand_cmd *cmd)
 /*
  * spinand_read_id- Read SPI Nand ID
  * Description:
- *    Read ID: read two ID bytes from the SPI Nand device
+ *    Read ID: read up to 4 ID bytes from the SPI Nand device
+ *    Supports both 2-byte (MT29F) and 3-byte (W25N01GW) JEDEC IDs
  */
 static int spinand_read_id(struct spi_device *spi_nand, u8 *id)
 {
 	int retval;
-	u8 nand_id[3];
+	u8 nand_id[4];
 	struct spinand_cmd cmd = {0};
 
 	cmd.cmd = CMD_READ_ID;
-	cmd.n_rx = 3;
+	cmd.n_rx = 4;
 	cmd.rx_buf = &nand_id[0];
 
 	retval = spinand_cmd(spi_nand, &cmd);
@@ -130,8 +131,14 @@ static int spinand_read_id(struct spi_device *spi_nand, u8 *id)
 		dev_err(&spi_nand->dev, "error %d reading id\n", retval);
 		return retval;
 	}
-	id[0] = nand_id[1];
-	id[1] = nand_id[2];
+	/* JEDEC format: [0]=dummy, [1]=mfr_id, [2]=dev_id, [3]=density/capacity */
+	id[0] = nand_id[1];  /* Manufacturer ID */
+	id[1] = nand_id[2];  /* Device code (byte 1) */
+	id[2] = nand_id[3];  /* Density/capacity code */
+
+	dev_info(&spi_nand->dev, "SPI NAND ID: mfr=0x%02x dev=0x%02x capacity=0x%02x\n",
+		id[0], id[1], id[2]);
+
 	return retval;
 }
 
@@ -798,6 +805,77 @@ static void spinand_cmdfunc(struct mtd_info *mtd, unsigned int command,
 }
 
 /**
+ * spinand_detect_device - Detect and validate SPI NAND device type
+ * @spi_nand: SPI device
+ * @id: Device ID bytes [mfr, device, capacity]
+ *
+ * Description:
+ *   Detects the SPI NAND device and validates supported chips.
+ *   Currently supports:
+ *   - Micron MT29F series (mfr=0x2C)
+ *   - Winbond W25N01GW (mfr=0xEF, device=0xBA, capacity=0x21)
+ */
+static int spinand_detect_device(struct spi_device *spi_nand, u8 *id)
+{
+	u8 mfr_id = id[0];
+	u8 dev_id = id[1];
+	u8 cap_id = id[2];
+
+	switch (mfr_id) {
+	case SPINAND_MFR_MICRON:
+		dev_info(&spi_nand->dev, "Detected Micron SPI NAND device\n");
+		return 0;
+
+	case SPINAND_MFR_WINBOND:
+		/* Check for W25N01GW specifically. The device reports
+		 * dev_id 0xBA (not 0xAA as originally assumed).
+		 */
+		if (dev_id == 0xBA && cap_id == 0x21) {
+			dev_info(&spi_nand->dev, "Detected Winbond W25N01GW (1Gbit, 1.8V)\n");
+			return 0;
+		} else if (dev_id == 0xAA || dev_id == 0xBA) {
+			dev_warn(&spi_nand->dev,
+				"Detected Winbond SPI NAND (mfr=0x%02x dev=0x%02x cap=0x%02x), "
+				"using MT29F geometry (may not match actual device)\n",
+				mfr_id, dev_id, cap_id);
+			return 0;
+		}
+		dev_warn(&spi_nand->dev, "Winbond SPI NAND mfr_id=0x%02x not explicitly supported\n",
+			mfr_id);
+		return 0;  /* Continue anyway, use default MT29F geometry */
+
+	default:
+		dev_warn(&spi_nand->dev,
+			"Unknown SPI NAND manufacturer (0x%02x), attempting to use MT29F geometry\n",
+			mfr_id);
+		return 0;  /* Continue with default geometry */
+	}
+}
+
+/*
+ * spinand_flash_ids - Full-ID NAND table used by nand_scan_ident() so this
+ * driver's SPI NAND devices are identified by their complete JEDEC ID
+ * (manufacturer + device + capacity) instead of falling through to the
+ * generic parallel-NAND partial-ID table in nand_ids.c. Matching only on
+ * dev_id there is ambiguous: W25N01GW's dev_id (0xBA) collides with an
+ * unrelated legacy 16-bit parallel NAND entry, which makes nand_scan()
+ * wrongly assume a 16-bit bus and fail with "No NAND device found".
+ */
+static struct nand_flash_dev spinand_flash_ids[] = {
+	{
+		.name = "Winbond W25N01GW 1Gb 1.8V 8-bit",
+		{ .id = {SPINAND_MFR_WINBOND, 0xBA, 0x21} },
+		.pagesize = 2048,
+		.chipsize = 128,	/* MiB: 1Gbit / 8 */
+		.erasesize = 128 * 1024,
+		.options = 0,
+		.id_len = 3,
+		.oobsize = 64,
+	},
+	{ .name = NULL }
+};
+
+/**
  * spinand_lock_block- send write register 0x1f command to the Nand device
  *
  * Description:
@@ -838,6 +916,7 @@ static int spinand_probe(struct spi_device *spi_nand)
 	struct spinand_info *info;
 	struct spinand_state *state;
 	struct mtd_part_parser_data ppdata;
+	u8 nand_id[3];
 
 	info  = devm_kzalloc(&spi_nand->dev, sizeof(struct spinand_info),
 			GFP_KERNEL);
@@ -847,6 +926,10 @@ static int spinand_probe(struct spi_device *spi_nand)
 	info->spi = spi_nand;
 
 	spinand_lock_block(spi_nand, BL_ALL_UNLOCKED);
+
+	/* Read and detect device */
+	spinand_read_id(spi_nand, nand_id);
+	spinand_detect_device(spi_nand, nand_id);
 
 	state = devm_kzalloc(&spi_nand->dev, sizeof(struct spinand_state),
 			GFP_KERNEL);
@@ -888,6 +971,14 @@ static int spinand_probe(struct spi_device *spi_nand)
 	chip->cmdfunc	= spinand_cmdfunc;
 	chip->waitfunc	= spinand_wait;
 	chip->options	|= NAND_CACHEPRG;
+	/*
+	 * This driver has no chip->ecc.hwctl/calculate/correct hooks, so
+	 * the generic nand_write_subpage_hwecc() auto-installed by
+	 * nand_scan_tail() for NAND_ECC_HW would crash (NULL function
+	 * pointer call) on any partial-page write. SPI NAND has no real
+	 * subpage-program support anyway, so disable it outright.
+	 */
+	chip->options	|= NAND_NO_SUBPAGE_WRITE;
 	chip->select_chip = spinand_select_chip;
 
 	mtd = devm_kzalloc(&spi_nand->dev, sizeof(struct mtd_info), GFP_KERNEL);
@@ -901,7 +992,16 @@ static int spinand_probe(struct spi_device *spi_nand)
 	mtd->owner = THIS_MODULE;
 	mtd->oobsize = 64;
 
-	if (nand_scan(mtd, 1))
+	/*
+	 * Use nand_scan_ident() with our own full-ID table instead of
+	 * generic nand_scan(), otherwise the parallel-NAND partial-ID
+	 * table (nand_ids.c) matches this chip's dev_id ambiguously and
+	 * misdetects it as a 16-bit NAND, failing identification.
+	 */
+	if (nand_scan_ident(mtd, 1, spinand_flash_ids))
+		return -ENXIO;
+
+	if (nand_scan_tail(mtd))
 		return -ENXIO;
 
 	ppdata.of_node = spi_nand->dev.of_node;
@@ -924,6 +1024,7 @@ static int spinand_remove(struct spi_device *spi)
 
 static const struct of_device_id spinand_dt[] = {
 	{ .compatible = "spinand,mt29f", },
+	{ .compatible = "spinand,w25n01gw", },
 	{}
 };
 
@@ -943,6 +1044,6 @@ static struct spi_driver spinand_driver = {
 
 module_spi_driver(spinand_driver);
 
-MODULE_DESCRIPTION("SPI NAND driver for Micron");
+MODULE_DESCRIPTION("SPI NAND driver for Micron MT29F and Winbond W25N01GW");
 MODULE_AUTHOR("Henry Pan <hspan@micron.com>, Kamlakant Patel <kamlakant.patel@broadcom.com>");
 MODULE_LICENSE("GPL v2");
