@@ -46,6 +46,12 @@
 //add by carola
 &spi_6 {
 	status = "ok";
+
+	w25n01gw@0 {
+        compatible = "spinand,w25n01gw";
+        reg = <0>;
+        spi-max-frequency = <19200000>;
+    };
 };
 
 

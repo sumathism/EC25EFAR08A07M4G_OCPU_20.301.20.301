@@ -37,6 +37,13 @@
 #define CMD_READ_REG			0x0f
 #define CMD_WRITE_REG			0x1f
 
+/* JEDEC Manufacturer IDs */
+#define SPINAND_MFR_MICRON		0x2c
+#define SPINAND_MFR_WINBOND		0xef
+
+/* Winbond W25N01GW Device ID */
+#define SPINAND_DEVID_W25N01GW		0xaa21
+
 /* feature/ status reg */
 #define REG_BLOCK_LOCK			0xa0
 #define REG_OTP				0xb0

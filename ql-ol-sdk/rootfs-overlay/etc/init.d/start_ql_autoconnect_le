@@ -1,0 +1,29 @@
+#! /bin/sh
+#
+# ql_autoconnect init.d script: waits for SIM + network registration, then
+# brings up the data call automatically at boot.
+
+set -e
+
+case "$1" in
+  start)
+        echo -n "Starting ql_autoconnect: "
+        start-stop-daemon -S -b -a ql_autoconnect
+        echo "done"
+        ;;
+  stop)
+        echo -n "Stopping ql_autoconnect: "
+        start-stop-daemon -K -n ql_autoconnect
+        echo "done"
+        ;;
+  restart)
+        $0 stop
+        $0 start
+        ;;
+  *)
+        echo "Usage start_ql_autoconnect_le { start | stop | restart}" >&2
+        exit 1
+        ;;
+esac
+
+exit 0

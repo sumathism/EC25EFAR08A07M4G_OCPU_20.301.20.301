@@ -1,10 +1,12 @@
 config MTD_SPINAND_MT29F
-	tristate "SPINAND Device Support for Micron"
+	tristate "SPINAND Device Support for Micron MT29F and Winbond W25N01GW"
 	depends on MTD_NAND && SPI
 	help
-	  This enables support for accessing Micron SPI NAND flash
-	  devices.
-	  If you have Micron SPI NAND chip say yes.
+	  This enables support for accessing SPI NAND flash devices including:
+	  - Micron MT29F series
+	  - Winbond W25N01GW (1Gbit, 1.8V)
+
+	  If you have Micron or Winbond SPI NAND chip say yes.
 
 	  If unsure, say no here.
 
