@@ -7,7 +7,7 @@ OUTPUT_FORMAT("elf32-bigarm", "elf32-bigarm",
 	      "elf32-littlearm")
 OUTPUT_ARCH(arm)
 ENTRY(_start)
-SEARCH_DIR("=/P4code/depot3/Qualcomm/MDM9x07/MCU_R08/apps_proc/poky/build/tmp-glibc/deploy/sdk/ql-ol-sdk/ql-ol-crosstool/sysroots/x86_64-oesdk-linux/usr/arm-oe-linux-gnueabi/lib"); SEARCH_DIR("=/usr/local/lib"); SEARCH_DIR("=/lib"); SEARCH_DIR("=/usr/lib");
+SEARCH_DIR("=/workspace/ec25/ql-ol-sdk/ql-ol-crosstool/sysroots/x86_64-oesdk-linux/usr/arm-oe-linux-gnueabi/lib"); SEARCH_DIR("=/usr/local/lib"); SEARCH_DIR("=/lib"); SEARCH_DIR("=/usr/lib");
 SECTIONS
 {
   /* Read-only sections, merged into text segment: */

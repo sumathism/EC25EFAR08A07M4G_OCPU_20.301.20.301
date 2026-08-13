@@ -1,4 +1,4 @@
-#!/P4code/depot3/Qualcomm/MDM9x07/MCU_R08/apps_proc/poky/build/tmp-glibc/deploy/sdk/ql-ol-sdk/ql-ol-crosstool/sysroots/x86_64-oesdk-linux/usr/bin/python2.7
+#!/workspace/ec25/ql-ol-sdk/ql-ol-crosstool/sysroots/x86_64-oesdk-linux/usr/bin/python2.7
 import sys
 from lib2to3.main import main
 

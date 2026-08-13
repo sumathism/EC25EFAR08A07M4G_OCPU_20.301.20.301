@@ -17,7 +17,7 @@ old_library=''
 inherited_linker_flags=''
 
 # Libraries that this one depends upon.
-dependency_libs=' -L/P4code/depot3/Qualcomm/MDM9x07/MCU_R08/apps_proc/poky/build/tmp-glibc/sysroots/x86_64-nativesdk-oesdk-linux/P4code/depot3/Qualcomm/MDM9x07/MCU_R08/apps_proc/poky/build/tmp-glibc/deploy/sdk/ql-ol-sdk/ql-ol-crosstool/sysroots/x86_64-oesdk-linux/usr/lib/arm-oe-linux-gnueabi -L/P4code/depot3/Qualcomm/MDM9x07/MCU_R08/apps_proc/poky/build/tmp-glibc/sysroots/x86_64-nativesdk-oesdk-linux/P4code/depot3/Qualcomm/MDM9x07/MCU_R08/apps_proc/poky/build/tmp-glibc/deploy/sdk/ql-ol-sdk/ql-ol-crosstool/sysroots/x86_64-oesdk-linux/lib'
+dependency_libs=' -L/P4code/depot3/Qualcomm/MDM9x07/MCU_R08/apps_proc/poky/build/tmp-glibc/sysroots/x86_64-nativesdk-oesdk-linux/workspace/ec25/ql-ol-sdk/ql-ol-crosstool/sysroots/x86_64-oesdk-linux/usr/lib/arm-oe-linux-gnueabi -L/P4code/depot3/Qualcomm/MDM9x07/MCU_R08/apps_proc/poky/build/tmp-glibc/sysroots/x86_64-nativesdk-oesdk-linux/workspace/ec25/ql-ol-sdk/ql-ol-crosstool/sysroots/x86_64-oesdk-linux/lib'
 
 # Names of additional weak libraries provided by this library
 weak_library_names=''
@@ -38,4 +38,4 @@ dlopen=''
 dlpreopen=''
 
 # Directory that this library needs to be installed in:
-libdir='/P4code/depot3/Qualcomm/MDM9x07/MCU_R08/apps_proc/poky/build/tmp-glibc/deploy/sdk/ql-ol-sdk/ql-ol-crosstool/sysroots/x86_64-oesdk-linux/usr/libexec/arm-oe-linux-gnueabi/gcc/arm-oe-linux-gnueabi/4.9.3'
+libdir='/workspace/ec25/ql-ol-sdk/ql-ol-crosstool/sysroots/x86_64-oesdk-linux/usr/libexec/arm-oe-linux-gnueabi/gcc/arm-oe-linux-gnueabi/4.9.3'

@@ -6,14 +6,14 @@
 #	make-debug-archive --kernel [--force] [RELEASE]
 #
 # Valid options are those listed under 'Input selection options'
-# by running /P4code/depot3/Qualcomm/MDM9x07/MCU_R08/apps_proc/poky/build/tmp-glibc/deploy/sdk/ql-ol-sdk/ql-ol-crosstool/sysroots/x86_64-oesdk-linux/usr/bin/eu-unstrip --help.
+# by running /workspace/ec25/ql-ol-sdk/ql-ol-crosstool/sysroots/x86_64-oesdk-linux/usr/bin/eu-unstrip --help.
 #
 # The archive installed by --kernel be used automatically by -K.
 # An offline archive can be used via -e in any tool that accepts those options.
 #
 
-UNSTRIP=${UNSTRIP:-/P4code/depot3/Qualcomm/MDM9x07/MCU_R08/apps_proc/poky/build/tmp-glibc/deploy/sdk/ql-ol-sdk/ql-ol-crosstool/sysroots/x86_64-oesdk-linux/usr/bin/eu-unstrip}
-AR=${AR:-/P4code/depot3/Qualcomm/MDM9x07/MCU_R08/apps_proc/poky/build/tmp-glibc/deploy/sdk/ql-ol-sdk/ql-ol-crosstool/sysroots/x86_64-oesdk-linux/usr/bin/eu-ar}
+UNSTRIP=${UNSTRIP:-/workspace/ec25/ql-ol-sdk/ql-ol-crosstool/sysroots/x86_64-oesdk-linux/usr/bin/eu-unstrip}
+AR=${AR:-/workspace/ec25/ql-ol-sdk/ql-ol-crosstool/sysroots/x86_64-oesdk-linux/usr/bin/eu-ar}
 SUDO=${SUDO:-/usr/bin/sudo}
 
 LS=/bin/ls

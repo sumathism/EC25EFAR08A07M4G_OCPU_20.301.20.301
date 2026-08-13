@@ -1,8 +1,8 @@
-/P4code/depot3/Qualcomm/MDM9x07/MCU_R08/apps_proc/poky/build/tmp-glibc/deploy/sdk/ql-ol-sdk/ql-ol-crosstool/sysroots/x86_64-oesdk-linux/usr/lib/python2.7/hashlib.py
-/P4code/depot3/Qualcomm/MDM9x07/MCU_R08/apps_proc/poky/build/tmp-glibc/deploy/sdk/ql-ol-sdk/ql-ol-crosstool/sysroots/x86_64-oesdk-linux/usr/lib/python2.7/lib-dynload/_hashlib.so
-/P4code/depot3/Qualcomm/MDM9x07/MCU_R08/apps_proc/poky/build/tmp-glibc/deploy/sdk/ql-ol-sdk/ql-ol-crosstool/sysroots/x86_64-oesdk-linux/usr/lib/python2.7/sha.py
-/P4code/depot3/Qualcomm/MDM9x07/MCU_R08/apps_proc/poky/build/tmp-glibc/deploy/sdk/ql-ol-sdk/ql-ol-crosstool/sysroots/x86_64-oesdk-linux/usr/lib/python2.7/md5.pyc
-/P4code/depot3/Qualcomm/MDM9x07/MCU_R08/apps_proc/poky/build/tmp-glibc/deploy/sdk/ql-ol-sdk/ql-ol-crosstool/sysroots/x86_64-oesdk-linux/usr/lib/python2.7/lib-dynload/crypt.so
-/P4code/depot3/Qualcomm/MDM9x07/MCU_R08/apps_proc/poky/build/tmp-glibc/deploy/sdk/ql-ol-sdk/ql-ol-crosstool/sysroots/x86_64-oesdk-linux/usr/lib/python2.7/hashlib.pyc
-/P4code/depot3/Qualcomm/MDM9x07/MCU_R08/apps_proc/poky/build/tmp-glibc/deploy/sdk/ql-ol-sdk/ql-ol-crosstool/sysroots/x86_64-oesdk-linux/usr/lib/python2.7/md5.py
-/P4code/depot3/Qualcomm/MDM9x07/MCU_R08/apps_proc/poky/build/tmp-glibc/deploy/sdk/ql-ol-sdk/ql-ol-crosstool/sysroots/x86_64-oesdk-linux/usr/lib/python2.7/sha.pyc
+/workspace/ec25/ql-ol-sdk/ql-ol-crosstool/sysroots/x86_64-oesdk-linux/usr/lib/python2.7/hashlib.py
+/workspace/ec25/ql-ol-sdk/ql-ol-crosstool/sysroots/x86_64-oesdk-linux/usr/lib/python2.7/lib-dynload/_hashlib.so
+/workspace/ec25/ql-ol-sdk/ql-ol-crosstool/sysroots/x86_64-oesdk-linux/usr/lib/python2.7/sha.py
+/workspace/ec25/ql-ol-sdk/ql-ol-crosstool/sysroots/x86_64-oesdk-linux/usr/lib/python2.7/md5.pyc
+/workspace/ec25/ql-ol-sdk/ql-ol-crosstool/sysroots/x86_64-oesdk-linux/usr/lib/python2.7/lib-dynload/crypt.so
+/workspace/ec25/ql-ol-sdk/ql-ol-crosstool/sysroots/x86_64-oesdk-linux/usr/lib/python2.7/hashlib.pyc
+/workspace/ec25/ql-ol-sdk/ql-ol-crosstool/sysroots/x86_64-oesdk-linux/usr/lib/python2.7/md5.py
+/workspace/ec25/ql-ol-sdk/ql-ol-crosstool/sysroots/x86_64-oesdk-linux/usr/lib/python2.7/sha.pyc

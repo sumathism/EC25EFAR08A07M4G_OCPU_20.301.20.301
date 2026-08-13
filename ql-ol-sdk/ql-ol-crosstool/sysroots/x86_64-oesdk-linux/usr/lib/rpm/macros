@@ -1,4 +1,4 @@
-#/*! \page config_macros Default configuration: /P4code/depot3/Qualcomm/MDM9x07/MCU_R08/apps_proc/poky/build/tmp-glibc/deploy/sdk/ql-ol-sdk/ql-ol-crosstool/sysroots/x86_64-oesdk-linux/usr/lib/rpm/macros
+#/*! \page config_macros Default configuration: /workspace/ec25/ql-ol-sdk/ql-ol-crosstool/sysroots/x86_64-oesdk-linux/usr/lib/rpm/macros
 # \verbatim
 #
 # $Id: macros.in,v 1.39.2.36 2012/05/30 19:17:04 jbj Exp $
@@ -31,7 +31,7 @@
 %_usrsrc		%{_usr}/src
 %_var			%{_usr}/../var
 # The dynamic relocation code sets the following two items
-#%_usrlibrpm		/P4code/depot3/Qualcomm/MDM9x07/MCU_R08/apps_proc/poky/build/tmp-glibc/deploy/sdk/ql-ol-sdk/ql-ol-crosstool/sysroots/x86_64-oesdk-linux/usr/lib/rpm
+#%_usrlibrpm		/workspace/ec25/ql-ol-sdk/ql-ol-crosstool/sysroots/x86_64-oesdk-linux/usr/lib/rpm
 #%_etcrpm		/etc/rpm
 
 %__objext		o
@@ -908,7 +908,7 @@ $_arbitrary_tags_tests	Foo:Bar
 # ---- configure macros.
 #	Macro(s) slavishly copied from autoconf's config.status.
 #
-%_prefix		/P4code/depot3/Qualcomm/MDM9x07/MCU_R08/apps_proc/poky/build/tmp-glibc/deploy/sdk/ql-ol-sdk/ql-ol-crosstool/sysroots/x86_64-oesdk-linux/usr
+%_prefix		/workspace/ec25/ql-ol-sdk/ql-ol-crosstool/sysroots/x86_64-oesdk-linux/usr
 %_exec_prefix		%{_prefix}
 %_datarootdir		%{_prefix}/share
 %_bindir		%{_exec_prefix}/bin

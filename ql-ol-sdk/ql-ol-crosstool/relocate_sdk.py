@@ -38,7 +38,7 @@ else:
     def b(x):
         return x.encode(sys.getfilesystemencoding())
 
-old_prefix = re.compile(b("/P4code/depot3/Qualcomm/MDM9x07/MCU_R08/apps_proc/poky/build/tmp-glibc/deploy/sdk/ql-ol-sdk/ql-ol-crosstool"))
+old_prefix = re.compile(b("/workspace/ec25/ql-ol-sdk/ql-ol-crosstool"))
 
 def get_arch():
     f.seek(0)

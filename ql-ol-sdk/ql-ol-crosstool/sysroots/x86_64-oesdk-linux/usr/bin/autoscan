@@ -25,7 +25,7 @@ eval 'case $# in 0) exec /usr/bin/env perl -S "$0";; *) exec /usr/bin/env perl -
 
 BEGIN
 {
-  my $pkgdatadir = $ENV{'autom4te_perllibdir'} || '/P4code/depot3/Qualcomm/MDM9x07/MCU_R08/apps_proc/poky/build/tmp-glibc/deploy/sdk/ql-ol-sdk/ql-ol-crosstool/sysroots/x86_64-oesdk-linux/usr/share/autoconf';
+  my $pkgdatadir = $ENV{'autom4te_perllibdir'} || '/workspace/ec25/ql-ol-sdk/ql-ol-crosstool/sysroots/x86_64-oesdk-linux/usr/share/autoconf';
   unshift @INC, $pkgdatadir;
 
   # Override SHELL.  On DJGPP SHELL may not be set to a shell
@@ -91,10 +91,10 @@ my $configure_scan = 'configure.scan';
 my $log;
 
 # Autoconf and lib files.
-my $autom4te = $ENV{'AUTOM4TE'} || '/P4code/depot3/Qualcomm/MDM9x07/MCU_R08/apps_proc/poky/build/tmp-glibc/deploy/sdk/ql-ol-sdk/ql-ol-crosstool/sysroots/x86_64-oesdk-linux/usr/bin/autom4te';
+my $autom4te = $ENV{'AUTOM4TE'} || '/workspace/ec25/ql-ol-sdk/ql-ol-crosstool/sysroots/x86_64-oesdk-linux/usr/bin/autom4te';
 my $autoconf = "$autom4te --language=autoconf";
 my @prepend_include;
-my @include = ('/P4code/depot3/Qualcomm/MDM9x07/MCU_R08/apps_proc/poky/build/tmp-glibc/deploy/sdk/ql-ol-sdk/ql-ol-crosstool/sysroots/x86_64-oesdk-linux/usr/share/autoconf');
+my @include = ('/workspace/ec25/ql-ol-sdk/ql-ol-crosstool/sysroots/x86_64-oesdk-linux/usr/share/autoconf');
 
 # $help
 # -----
