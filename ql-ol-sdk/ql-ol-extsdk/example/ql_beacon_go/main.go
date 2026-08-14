@@ -237,17 +237,25 @@ func main() {
 	}
 	defer session.Close()
 
-	// GNSS is enabled once for the life of the process (matching LAFV2's own
-	// EC25E handling - src/comm/comm_ec25e/lafm_comm_ec25e_gnss.c - which
-	// enables the GNSS engine once and leaves it running continuously,
-	// caching whatever fix arrives; the beacon send path only ever reads
-	// that cache). Starting/stopping navigation once per beacon cycle - the
-	// first version of this code did - never gives the receiver enough
-	// continuous runtime to acquire a fix.
+	// GNSS is left running continuously (matching LAFV2's own EC25E handling
+	// - src/comm/comm_ec25e/lafm_comm_ec25e_gnss.c - which enables the GNSS
+	// engine and leaves it running, caching whatever fix arrives; the
+	// beacon send path only ever reads that cache). Starting/stopping
+	// navigation once per beacon cycle - the first version of this code
+	// did - never gives the receiver enough continuous runtime to acquire
+	// a fix. gnssWatchdogLoop only detects staleness and signals gnssStaleCh;
+	// the actual recovery action (restartNavigation) is decided and run
+	// here, not inside that background goroutine - see gnss_session.go's
+	// package doc comment for why.
+	var gnssStaleCh chan string
 	if err := startGNSSSession(); err != nil {
 		logf("startGNSSSession: %v", err)
 	} else {
 		defer stopGNSSSession()
+		gnssWatchdogStop := make(chan struct{})
+		defer close(gnssWatchdogStop)
+		gnssStaleCh = make(chan string, 1)
+		go gnssWatchdogLoop(gnssWatchdogStop, gnssStaleCh)
 	}
 
 	var lastTimestampUTCMs uint64
@@ -301,6 +309,12 @@ func main() {
 				continue
 			}
 			logf("no ack for seq %d within timeout, resent it", seq)
+		case reason := <-gnssStaleCh:
+			// nil gnssStaleCh (startGNSSSession failed above) never fires this case.
+			logf("GNSS watchdog: %s, restarting navigation", reason)
+			if err := restartNavigation(); err != nil {
+				logf("restartNavigation failed: %v", err)
+			}
 		case <-sigCh:
 			logf("shutting down")
 			return

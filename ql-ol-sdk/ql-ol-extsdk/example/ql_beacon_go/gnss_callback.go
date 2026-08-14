@@ -38,6 +38,8 @@ func handleLocationInfo(loc *C.QL_LOC_LOCATION_INFO_T) {
 	gnssMu.Lock()
 	defer gnssMu.Unlock()
 
+	gnssLastValidTokenAt = time.Now() // any indication proves the engine is alive - see gnssWatchdogLoop
+
 	// LAFV2 stamps both last_updated_at_epoch and last_fix_at_epoch from a
 	// single lafm_timer_get_epoch_s() call per event (comm_ec25e_gnss.c) -
 	// one clock, read once, used for both fields. That's also why "GPS
@@ -53,6 +55,7 @@ func handleLocationInfo(loc *C.QL_LOC_LOCATION_INFO_T) {
 		gnssCached.LastFixEpoch = now
 		gnssCached.LatitudeDeg = float64(loc.latitude)
 		gnssCached.LongitudeDeg = float64(loc.longitude)
+		gnssLastValidFixAt = time.Now() // see gnssWatchdogLoop
 		if !gnssGotFirstFix {
 			gnssGotFirstFix = true
 			gnssCached.TTFF = uint16(time.Since(gnssStartedAt).Seconds())
@@ -101,6 +104,7 @@ func handleSVInfo(sv *C.QL_LOC_GNSS_SV_STATUS_T) {
 
 	gnssMu.Lock()
 	defer gnssMu.Unlock()
+	gnssLastValidTokenAt = time.Now() // see gnssWatchdogLoop
 	for bit := 0; bit < 4; bit++ {
 		gnssSVValid[bit] = visible[bit] > 0
 		gnssSVVisible[bit] = visible[bit]
@@ -116,6 +120,10 @@ func handleSVInfo(sv *C.QL_LOC_GNSS_SV_STATUS_T) {
 // comment for why (QL_LOC has no structured API for any of this).
 func handleNMEAInfo(n *C.QL_LOC_NMEA_INFO_T) {
 	sentence := C.GoString(&n.nmea[0])
+
+	gnssMu.Lock()
+	gnssLastValidTokenAt = time.Now() // any NMEA_INFO callback proves the engine is alive - see gnssWatchdogLoop
+	gnssMu.Unlock()
 
 	if gsa, ok := nmea.ParseGSA(sentence); ok {
 		bit, known := nmea.TalkerToConstBit[gsa.Talker]
