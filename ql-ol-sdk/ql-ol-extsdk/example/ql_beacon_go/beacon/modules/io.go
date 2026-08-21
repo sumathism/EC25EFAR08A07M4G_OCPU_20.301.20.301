@@ -6,42 +6,33 @@ import "encoding/binary"
 const (
 	DI0 = 0
 	DI1 = 1
-      //VIN = 2
-      //no equivalent on ec25, intentionally unused
-	
+	// VIN = 2 - no ignition-sense circuit on this hardware
 	DI2 = 3
 )
 
 // Digital Output bit indices
 const (
-	// DO_SMPS = 0 - no equivalent, unused
+	// DO_SMPS = 0 - SMPS is external to the module, nothing to drive here
 	DO0 = 1
 	DO1 = 2
-     // DO_COPROC_5V = 3, DO_COMM_PWR = 4
-     // DO_COMM_PWR_KEY = 5
-     // DO_EN_COPROC_PWR_CTRL = 8
-     // DO_EN_COPROC_DOUT_CTRL = 9
-     // DO_EN_UNPLUG_DETECT = 10
-     // DO_INTBAT_POWER_CTRL = 11
-     // DO_INTBAT_CHARGE_CTRL = 12 - all no equivalent, unused
+	// DO_COPROC_5V = 3, DO_COMM_PWR = 4 - no coprocessor, no readable path to VBAT_BB
+	DO_COMM_PWR_KEY = 5
+	// DO_EN_COPROC_PWR_CTRL = 8, DO_EN_COPROC_DOUT_CTRL = 9 - no coprocessor
+	// DO_EN_UNPLUG_DETECT = 10 - requires backup-battery hardware not present
+	// DO_INTBAT_POWER_CTRL = 11, DO_INTBAT_CHARGE_CTRL = 12 - no internal battery circuit
 )
 
 // Analog Input bit indices
 const (
 	AI0 = 0
 	AI1 = 1
-     // VIN = 2
-     // VIN_CURR = 3
-     // no equivalent, unused
-        VBAT = 4
-     // VBAT_CURR = 5
-     // CANL = 6
-     // CANH = 7
-     // no equivalent, unused
-	AI2 = 8
-     // COMM = 9
-     // SW_5V = 10
-     // no equivalent, unused
+	// VIN = 2, VIN_CURR = 3 - no ignition sense circuit, no current sensing on this hardware
+	VBAT = 4
+	// VBAT_CURR = 5 - no current-sensing hardware, internal or external, on this module
+	// CANL = 6, CANH = 7 - no CAN controller on this hardware
+	AI2  = 8
+	COMM = 9
+	// SW_5V = 10 - no switchable 5V rail on this hardware
 )
 
 // Each enable/state field is a 3-byte (24-bit) bitmask.
